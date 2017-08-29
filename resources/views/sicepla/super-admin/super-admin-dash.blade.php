@@ -8,6 +8,6 @@
 @component('components.nav-link', [
     'icon' => 'fa fa-object-group',
     'title' => 'Departamento',
-    'link' => '#',
+    'link' => route('departamentos')
 ])
 @endcomponent

@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
+    'App\\Container\\Sicepla\\Src\\Controllers\\DepartamentoController' => $baseDir . '/app/Container/Sicepla/Src/Controllers/DepartamentoController.php',
+    'App\\Container\\Sicepla\\Src\\Controllers\\UserController' => $baseDir . '/app/Container/Sicepla/Src/Controllers/UserController.php',
     'App\\Container\\Sicepla\\Src\\User' => $baseDir . '/app/Container/Sicepla/Src/User.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -35,6 +37,7 @@ return array(
     'Collective\\Html\\HtmlBuilder' => $vendorDir . '/laravelcollective/html/src/HtmlBuilder.php',
     'Collective\\Html\\HtmlFacade' => $vendorDir . '/laravelcollective/html/src/HtmlFacade.php',
     'Collective\\Html\\HtmlServiceProvider' => $vendorDir . '/laravelcollective/html/src/HtmlServiceProvider.php',
+    'CreateDepartTable' => $baseDir . '/database/migrations/2017_08_28_214218_create_depart_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2017_06_05_166100_create_password_resets_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2017_06_05_166000_create_users_table.php',
     'Cron\\AbstractField' => $vendorDir . '/mtdowling/cron-expression/src/Cron/AbstractField.php',

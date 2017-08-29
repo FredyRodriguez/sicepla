@@ -3,6 +3,12 @@
 <div class="col-md-12">
     @component('components.portlet', ['icon' => 'fa fa-users', 'title' => 'Usuarios'])
         <div id="app">
+            <div>
+                <button data-toggle="modal" data-target="#crear-usuario" class="btn green-jungle">
+                    <i class="fa fa-plus"></i>
+                       Crear Usuario
+                   </button>
+             </div>   <br>
             <div class="table-responsive">
                 <table class="table table-hover table-bordered table-condensed">
                     <thead>

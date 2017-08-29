@@ -3,11 +3,10 @@
 namespace App\Container\Sicepla\Src\Controllers;
 
 use Illuminate\Http\Request;
-use App\Container\Sicepla\Src\User;
 use App\Http\Controllers\Controller;
+use App\Container\Sicepla\Src\Departamento;
 
-
-class UserController extends Controller
+class DepartamentoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +14,9 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {        
-        // User::all();
-        
-        $users = User::all();
-        return view('sicepla.super-admin.super-admin-usuarios',compact('users'));
-        //return User::all();
+    {
+        $departamento = Departamento::all();
+        return view('sicepla.super-admin.super-admin-departamento',compact('departamento'));
     }
 
     /**
@@ -30,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -41,7 +37,12 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $departamento = new Departamento;
+        $departamento->nombre=$request->name;
+        $departamento->descripcion=$request->descripcion;
+        $departamento->save();
+        $departamento = Departamento::all();
+        return view('sicepla.super-admin.super-admin-departamento',compact('departamento'));
     }
 
     /**
