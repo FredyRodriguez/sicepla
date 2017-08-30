@@ -5,7 +5,7 @@ namespace App\Container\Sicepla\Src\Controllers;
 use Illuminate\Http\Request;
 use App\Container\Sicepla\Src\User;
 use App\Http\Controllers\Controller;
-
+use App\Container\Sicepla\Src\Requests\UserStoreRequest;
 
 class UserController extends Controller
 {
@@ -30,7 +30,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('sicepla.super-admin.super-admin-crearuser');
     }
 
     /**
@@ -40,8 +40,19 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {     
+        $atributos = $request->only(
+            'name',
+            'telefono',
+            'documento',
+            'direccion',
+            'email',
+            'password'
+        ); 
+        $user = new User($atributos);
+        $user->password = bcrypt($user->password);
+        $user->save();
+        return redirect()->route('usuarios.index')->with('message','store'); 
     }
 
     /**

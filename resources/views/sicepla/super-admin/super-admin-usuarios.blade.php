@@ -1,14 +1,28 @@
 @extends('layouts.dash')
 @section('content')
 <div class="col-md-12">
+{{--Inicio Mensaje Confirmar--}}
+<?php $message = Session::get('message')?>
+@if($message == 'store')
+    <div class="alert alert-success" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times</span>
+        </button>
+        Usuario Creado Correctamente
+    </div>
+@endif
+{{--Fin Mensaje Confirmar--}}
     @component('components.portlet', ['icon' => 'fa fa-users', 'title' => 'Usuarios'])
         <div id="app">
+        {{--boton crear departamento--}}
             <div>
-                <button data-toggle="modal" data-target="#crear-usuario" class="btn green-jungle">
+                <a href="{{route('usuarios.create')}}" class="btn green-jungle">
                     <i class="fa fa-plus"></i>
                        Crear Usuario
-                   </button>
+                </a>
              </div>   <br>
+             {{--fin boton crear departamento--}}                  
+            {{--inicio tabla--}}
             <div class="table-responsive">
                 <table class="table table-hover table-bordered table-condensed">
                     <thead>
@@ -17,6 +31,7 @@
                         <th class="text-center">Documento</th>
                         <th class="text-center">Direccion</th>
                         <th class="text-center">E-mail</th>
+                        <th class="text-center">Departamento</th>
                         <th class="text-center">Operacion</th>
                     </thead>
                     @foreach($users as $user)
@@ -27,9 +42,12 @@
                             <td>{{$user->documento}}</td>
                             <td>{{$user->direccion}}</td>
                             <td>{{$user->email}}</td>
+                            <td>{{$user->departamento}}</td>
                             <td>
-                                <button class="editar-modal btn btn-danger" title="Eliminar Usuario">
-                                <!--<button class="editar-modal btn btn-danger" @click.prevent="destroy(user)">-->
+                                <button class="editar-modal btn blue" title="Editar Usuario">                                
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </button>
+                                <button class="editar-modal btn btn-danger" title="Eliminar Usuario">                                
                                     <span class="glyphicon glyphicon-trash"></span>
                                 </button>
                             </td>

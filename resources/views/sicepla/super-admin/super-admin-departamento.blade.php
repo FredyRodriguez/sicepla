@@ -1,14 +1,25 @@
 @extends('layouts.dash')
 @section('content')
 <div class="col-md-12">
+{{--Inicio Mensaje Confirmar--}}
+<?php $message = Session::get('message')?>
+@if($message == 'store')
+    <div class="alert alert-success" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times</span>
+        </button>
+        Departamento Creado Correctamente
+    </div>
+@endif
+{{--Fin Mensaje Confirmar--}}
     @component('components.portlet', ['icon' => 'fa fa-object-group', 'title' => 'Departamento'])
         <div id="app">
             {{--boton crear departamento--}}
                 <div>
-                    <button  type="button" data-toggle="modal" data-target="#crear-departamento" class="btn green-jungle">
+                    <a  href="{{route('departamentos.create')}}" class="btn green-jungle">
                         <i class="fa fa-plus"></i>
                         Crear Departamento
-                    </button>
+                    </a>
                 </div>
             {{--fin boton crear departamento--}}       
             <!-- Modal crear departamento -->
@@ -51,14 +62,11 @@
                             <td>{{$departamentos->nombre}}</td>
                             <td>{{$departamentos->descripcion}}</td>
                             <td>
-                            <button class="editar-modal btn blue" title="Eliminar Usuario">
-                                <!--<button class="editar-modal btn btn-danger" @click.prevent="destroy(user)">-->
-                                    <span class="glyphicon glyphicon-pencil"></span>
-                                </button>
-                                <button class="editar-modal btn btn-danger" title="Eliminar Usuario">
-                                <!--<button class="editar-modal btn btn-danger" @click.prevent="destroy(user)">-->
-                                    <span class="glyphicon glyphicon-trash"></span>
-                                </button>
+                                
+                                <a  href="{{route('departamentos.edit')}}" class="btn green-jungle">
+                        <i class="fa fa-plus"></i>
+                        Crear Departamento
+                    </a>
                                 
                             </td>
                         </tr>

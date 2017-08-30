@@ -15,3 +15,4 @@ Auth::routes();
 Route::get('/', function () {
     return view('sicepla.global.home');
 })->middleware('auth')->name('home');
+

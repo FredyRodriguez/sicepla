@@ -26,7 +26,7 @@ class DepartamentoController extends Controller
      */
     public function create()
     {
-        
+        return view('sicepla.super-admin.super-admin-creardpto');
     }
 
     /**
@@ -37,12 +37,19 @@ class DepartamentoController extends Controller
      */
     public function store(Request $request)
     {
-        $departamento = new Departamento;
-        $departamento->nombre=$request->name;
-        $departamento->descripcion=$request->descripcion;
+        Departamento::create([
+            'nombre' => $request['nombre'],
+            'descripcion' => $request['descripcion'],            
+        ]);
+        return redirect()->route('departamentos.index')->with('message','store');
+/*
+        $atributos = $request->only(
+            'nombre',
+            'descripcion'
+        );
+        $departamento = new Departamento($atributos);
         $departamento->save();
-        $departamento = Departamento::all();
-        return view('sicepla.super-admin.super-admin-departamento',compact('departamento'));
+        return redirect()->route('departamentos.index');*/
     }
 
     /**
@@ -64,7 +71,8 @@ class DepartamentoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $departamento = Departamento::find($id);
+        return view('sicepla.super-admin.super-admin-editdpto',['departamento'=>$departamento]);
     }
 
     /**
