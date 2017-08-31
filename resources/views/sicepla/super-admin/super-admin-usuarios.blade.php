@@ -21,7 +21,7 @@
                        Crear Usuario
                 </a>
              </div>   <br>
-             {{--fin boton crear departamento--}}                  
+             {{--fin boton crear departamento--}}
             {{--inicio tabla--}}
             <div class="table-responsive">
                 <table class="table table-hover table-bordered table-condensed">
@@ -32,31 +32,32 @@
                         <th class="text-center">Direccion</th>
                         <th class="text-center">E-mail</th>
                         <th class="text-center">Departamento</th>
-                        <th class="text-center">Operacion</th>
+                        <th class="text-center">Editar</th>
+                        <th class="text-center">Eliminar</th>
                     </thead>
                     @foreach($users as $user)
                     <tbody>
-                        <tr  class="text-center">                        
+                        <tr  class="text-center">
                             <td>{{$user->name}}</td>
                             <td>{{$user->telefono}}</td>
                             <td>{{$user->documento}}</td>
                             <td>{{$user->direccion}}</td>
                             <td>{{$user->email}}</td>
                             <td>{{$user->departamento}}</td>
-                            <td>
-                                <button class="editar-modal btn blue" title="Editar Usuario">                                
-                                    <span class="glyphicon glyphicon-pencil"></span>
-                                </button>
-                                <button class="editar-modal btn btn-danger" title="Eliminar Usuario">                                
-                                    <span class="glyphicon glyphicon-trash"></span>
-                                </button>
+                            <td><button class="editar-modal btn blue" title="Editar Usuario">
+                                  <span class="glyphicon glyphicon-pencil"></span>
+                              </button>
+                            </td>
+                            <td>{!!Form::open(['method' => 'DELETE', 'route' => ['usuarios.destroy',$user->PK_id]])!!}
+                                    {{ Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger'] )  }}
+                                {!!Form::close()!!}
                             </td>
                         </tr>
                     </tbody>
                     @endforeach
                 </table>
             </div>
-        </div>        
+        </div>
     @endcomponent
 </div>
 @endsection

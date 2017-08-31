@@ -21,7 +21,7 @@
                         Crear Departamento
                     </a>
                 </div>
-            {{--fin boton crear departamento--}}       
+            {{--fin boton crear departamento--}}
             <!-- Modal crear departamento -->
             <div id="crear-departamento" class="modal fade" role="dialog">
                 <div class="modal-dialog">
@@ -29,21 +29,21 @@
                         <div class="modal-header">
                             <h4 class="modal-title">Crear Departamento</h4>
                         </div>
-                        <div class="modal-body">                        
-                        {!! Form::open(['route'=>'departamentos.store','method'=>'POST']) !!}                        
-                            <div class="form-group form-md-line-input">                                 
+                        <div class="modal-body">
+                        {!! Form::open(['route'=>'departamentos.store','method'=>'POST']) !!}
+                            <div class="form-group form-md-line-input">
                                 {!!Form::text('name',null,['class'=>'form-control','placeholder'=>'Nombre','required','maxlength'=>'15'])!!}
                             </div>
                             <div class="form-group form-md-line-input">
                             {!!Form::text('descripcion',null,['class'=>'form-control','placeholder'=>'descripcion','required','maxlength'=>'85'])!!}</div>
-                        
+
                         </div>
                         <div class="modal-footer">
                         {!! Form::submit('registrar', ['class'=>'btn green-jungle']) !!}
                         {!! Form::submit('cancelar', ['class'=>'btn btn-default','data-dismiss'=>'modal']) !!}
-                        </div>                        
+                        </div>
                         {!! Form::close() !!}
-                        
+
                     </div>
                 </div>
             </div> <br>
@@ -56,18 +56,18 @@
                         <th class="text-center">Descripcion</th>
                         <th class="text-center">Operacion</th>
                     </thead>
-                    @foreach($departamento as $departamentos)
+                    @foreach($departamentos as $departamento)
                     <tbody>
-                        <tr  class="text-center">                        
-                            <td>{{$departamentos->nombre}}</td>
-                            <td>{{$departamentos->descripcion}}</td>
+                        <tr  class="text-center">
+                            <td>{{$departamento->nombre}}</td>
+                            <td>{{$departamento->descripcion}}</td>
                             <td>
-                                
-                                <a  href="{{route('departamentos.edit')}}" class="btn green-jungle">
-                        <i class="fa fa-plus"></i>
-                        Crear Departamento
+
+                                {{link_to_route('departamentos.edit', $title = '', $parameter = $departamento->PK_id, $attributes = ['class' => 'btn btn-simple btn-warning btn-icon edit icon-pencil'])}}
                     </a>
-                                
+
+                                @include('sicepla.super-admin.super-admin-deleteuser')
+
                             </td>
                         </tr>
                     </tbody>
@@ -75,12 +75,12 @@
                 </table>
             </div>
             {{--fin tabla--}}
-        </div>   
-             
+        </div>
+
     @endcomponent
 </div>
 @endsection
-@push('styles')  
+@push('styles')
   <link rel="stylesheet" href="/assets/global/plugins/bootstrap-select/css/bootstrap-select.min.css">
 @endpush
 @push('functions')

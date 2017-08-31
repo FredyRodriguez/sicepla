@@ -15,9 +15,9 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {        
+    {
         // User::all();
-        
+
         $users = User::all();
         return view('sicepla.super-admin.super-admin-usuarios',compact('users'));
         //return User::all();
@@ -40,7 +40,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {     
+    {
         $atributos = $request->only(
             'name',
             'telefono',
@@ -48,11 +48,11 @@ class UserController extends Controller
             'direccion',
             'email',
             'password'
-        ); 
+        );
         $user = new User($atributos);
         $user->password = bcrypt($user->password);
         $user->save();
-        return redirect()->route('usuarios.index')->with('message','store'); 
+        return redirect()->route('usuarios.index')->with('message','store');
     }
 
     /**
@@ -95,8 +95,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($users)
     {
-        //
+        User::destroy($users);
+        return redirect()->route('usuarios.index')->with('message','delete');
     }
+
 }

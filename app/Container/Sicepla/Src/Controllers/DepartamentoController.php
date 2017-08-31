@@ -15,8 +15,10 @@ class DepartamentoController extends Controller
      */
     public function index()
     {
-        $departamento = Departamento::all();
-        return view('sicepla.super-admin.super-admin-departamento',compact('departamento'));
+        $departamentos = Departamento::all();
+        return view('sicepla.super-admin.super-admin-departamento',[
+          'departamentos' => $departamentos,
+        ]);
     }
 
     /**
@@ -39,7 +41,7 @@ class DepartamentoController extends Controller
     {
         Departamento::create([
             'nombre' => $request['nombre'],
-            'descripcion' => $request['descripcion'],            
+            'descripcion' => $request['descripcion'],
         ]);
         return redirect()->route('departamentos.index')->with('message','store');
 /*
@@ -69,11 +71,21 @@ class DepartamentoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    /*public function edit($id)
     {
         $departamento = Departamento::find($id);
         return view('sicepla.super-admin.super-admin-editdpto',['departamento'=>$departamento]);
     }
+    */
+
+    public function edit($departamento)
+     {
+
+         $depar = Departamento::find($departamento);
+         return view('sicepla.super-admin.super-admin-editdpto',[
+           'departamento' => $depar,
+         ]);
+     }
 
     /**
      * Update the specified resource in storage.
@@ -82,9 +94,12 @@ class DepartamentoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $departamento)
     {
-        //
+      $depar = Departamento::find($departamento);
+      $depar->fill($request->all());
+      $depar->save();
+      return redirect('/departamentos')->with('success','Departamento Modificado Correctamente');
     }
 
     /**
