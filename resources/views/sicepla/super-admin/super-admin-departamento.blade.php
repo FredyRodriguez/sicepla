@@ -63,10 +63,10 @@
                             <td>{{$departamento->descripcion}}</td>
                             <td>
 
-                                {{link_to_route('departamentos.edit', $title = '', $parameter = $departamento->PK_id, $attributes = ['class' => 'btn btn-simple btn-warning btn-icon edit icon-pencil'])}}
+                                {{link_to_route('departamentos.edit', $title = '', $parameter = $departamento->id, $attributes = ['class' => 'btn btn-simple btn-warning btn-icon edit icon-pencil'])}}
                     </a>
 
-                                @include('sicepla.super-admin.super-admin-deleteuser')
+                                {{--@include('sicepla.super-admin.super-admin-deleteuser')--}}
 
                             </td>
                         </tr>

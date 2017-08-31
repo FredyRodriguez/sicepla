@@ -32,7 +32,6 @@
                         <th class="text-center">Direccion</th>
                         <th class="text-center">E-mail</th>
                         <th class="text-center">Departamento</th>
-                        <th class="text-center">Editar</th>
                         <th class="text-center">Eliminar</th>
                     </thead>
                     @foreach($users as $user)
@@ -44,10 +43,6 @@
                             <td>{{$user->direccion}}</td>
                             <td>{{$user->email}}</td>
                             <td>{{$user->departamento}}</td>
-                            <td><button class="editar-modal btn blue" title="Editar Usuario">
-                                  <span class="glyphicon glyphicon-pencil"></span>
-                              </button>
-                            </td>
                             <td>{!!Form::open(['method' => 'DELETE', 'route' => ['usuarios.destroy',$user->PK_id]])!!}
                                     {{ Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger'] )  }}
                                 {!!Form::close()!!}
