@@ -52,7 +52,7 @@ class UserController extends Controller
         $user = new User($atributos);
         $user->password = bcrypt($user->password);
         $user->save();
-        return redirect()->route('usuarios.index')->with('message','store');
+        return redirect()->route('usuarios.index')->with('success','Usuario Creado Correctamente');
     }
 
     /**
@@ -98,7 +98,7 @@ class UserController extends Controller
     public function destroy($users)
     {
         User::destroy($users);
-        return redirect()->route('usuarios.index')->with('message','delete');
+        return redirect()->route('usuarios.index')->with('error','Usuario Eliminado Correctamente');
     }
 
 }

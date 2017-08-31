@@ -2,15 +2,9 @@
 @section('content')
 <div class="col-md-12">
 {{--Inicio Mensaje Confirmar--}}
-<?php $message = Session::get('message')?>
-@if($message == 'store')
-    <div class="alert alert-success" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times</span>
-        </button>
-        Usuario Creado Correctamente
-    </div>
-@endif
+@include('sicepla.alerts.success')
+@include('sicepla.alerts.error')
+@include('sicepla.alerts.errors')
 {{--Fin Mensaje Confirmar--}}
     @component('components.portlet', ['icon' => 'fa fa-users', 'title' => 'Usuarios'])
         <div id="app">

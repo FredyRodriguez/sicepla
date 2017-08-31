@@ -2,15 +2,9 @@
 @section('content')
 <div class="col-md-12">
 {{--Inicio Mensaje Confirmar--}}
-<?php $message = Session::get('message')?>
-@if($message == 'store')
-    <div class="alert alert-success" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times</span>
-        </button>
-        Departamento Creado Correctamente
-    </div>
-@endif
+@include('sicepla.alerts.success')
+@include('sicepla.alerts.error')
+@include('sicepla.alerts.errors')
 {{--Fin Mensaje Confirmar--}}
     @component('components.portlet', ['icon' => 'fa fa-object-group', 'title' => 'Departamento'])
         <div id="app">
@@ -54,20 +48,18 @@
                     <thead>
                         <th class="text-center">Nombre</th>
                         <th class="text-center">Descripcion</th>
-                        <th class="text-center">Operacion</th>
+                        <th class="text-center">Editar</th>
+                        <th class="text-center">Eliminar</th>
                     </thead>
                     @foreach($departamentos as $departamento)
                     <tbody>
                         <tr  class="text-center">
                             <td>{{$departamento->nombre}}</td>
                             <td>{{$departamento->descripcion}}</td>
-                            <td>
+                            <td>{{link_to_route('departamentos.edit', $title = '', $parameter = $departamento->id, $attributes = ['class' => 'btn btn-simple btn-warning btn-icon edit icon-pencil'])}}
+                            </td>
 
-                                {{link_to_route('departamentos.edit', $title = '', $parameter = $departamento->id, $attributes = ['class' => 'btn btn-simple btn-warning btn-icon edit icon-pencil'])}}
-                    </a>
-
-                                {{--@include('sicepla.super-admin.super-admin-deleteuser')--}}
-
+                            <td>@include('sicepla.super-admin.super-admin-deletedepartamento')
                             </td>
                         </tr>
                     </tbody>

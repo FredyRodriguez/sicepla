@@ -43,7 +43,7 @@ class DepartamentoController extends Controller
             'nombre' => $request['nombre'],
             'descripcion' => $request['descripcion'],
         ]);
-        return redirect()->route('departamentos.index')->with('message','store');
+        return redirect('/departamentos')->with('success','Departamento Creado Correctamente');
 /*
         $atributos = $request->only(
             'nombre',
@@ -108,8 +108,9 @@ class DepartamentoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($departamento)
     {
-        //
+      Departamento::destroy($departamento);
+      return redirect('/departamentos')->with('error','Departamento Eliminado Correctamente');
     }
 }
