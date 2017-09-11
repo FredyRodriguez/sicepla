@@ -58,6 +58,33 @@
                                     'value'=> old('name') ?: auth()->user()->name,
                                     ])
                                     @endcomponent
+                                    @component('components.number', [
+                                    'name' => 'telefono',
+                                    'attributes' => "required",
+                                    'label' => 'Telefono',
+                                    'help' => 'Cambiar el Telefono',
+                                    'icon' => 'fa fa-phone',
+                                    'value'=> old('telefono') ?: auth()->user()->telefono,
+                                    ])
+                                    @endcomponent
+                                    @component('components.number', [
+                                    'name' => 'documento',
+                                    'attributes' => "required",
+                                    'label' => 'Documento',
+                                    'help' => 'Cambiar el Documento',
+                                    'icon' => 'fa fa-address-card-o',
+                                    'value'=> old('documento') ?: auth()->user()->documento,
+                                    ])
+                                    @endcomponent
+                                    @component('components.text', [
+                                    'name' => 'direccion',
+                                    'attributes' => "required",
+                                    'label' => 'Direccion',
+                                    'help' => 'Cambiar el Direccion',
+                                    'icon' => 'fa fa-sort-numeric-desc',
+                                    'value'=> old('direccion') ?: auth()->user()->direccion,
+                                    ])
+                                    @endcomponent
                                      @component('components.email', [
                                     'name' => 'email',
                                     'attributes' => "required",

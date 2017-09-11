@@ -26,6 +26,15 @@
             <div class="form-group form-md-line-input">                                 
                     {!!Form::password('confircontraseña',['class'=>'form-control','placeholder'=>'Confirmar Contraseña'])!!}
             </div>  
+            <div class="form-group form-md-line-input">
+            <label>Departamento</label>
+                <select class="form-control" name="" id="">
+                    @foreach($users as $user)
+                        <option>{{$user->nombre}}</option>
+                    @endforeach
+                </select>
+                
+            </div>
             {!! Form::submit('registrar', ['class'=>'btn green-jungle']) !!}
             </div>                        
             {!! Form::close() !!}

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Container\Sicepla\Src\Requests\UserStoreRequest;
 use App\Container\Sicepla\Src\User;
 use App\Http\Controllers\Controller;
+use App\Container\Sicepla\Src\Departamento;
 
 
 class UserController extends Controller
@@ -31,7 +32,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('sicepla.super-admin.super-admin-crearuser');
+        $users = Departamento::all();
+        return view('sicepla.super-admin.super-admin-crearuser',compact('users'));
     }
 
     /**
@@ -50,6 +52,7 @@ class UserController extends Controller
             'email',
             'password'
         );
+        
         $user = new User($atributos);
         $user->password = bcrypt($user->password);
         $user->save();
