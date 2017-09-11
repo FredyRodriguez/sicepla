@@ -3,6 +3,8 @@
 namespace App\Container\Sicepla\Src\Controllers;
 
 use Illuminate\Http\Request;
+use App\Container\Sicepla\Src\Requests\DeptoStoreRequest;
+use App\Container\Sicepla\Src\Requests\DeptoUpdateRequest;
 use App\Http\Controllers\Controller;
 use App\Container\Sicepla\Src\Departamento;
 
@@ -37,7 +39,7 @@ class DepartamentoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DeptoStoreRequest $request)
     {
         Departamento::create([
             'nombre' => $request['nombre'],
@@ -94,7 +96,7 @@ class DepartamentoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $departamento)
+    public function update(DeptoUpdateRequest $request, $departamento)
     {
       $depar = Departamento::find($departamento);
       $depar->fill($request->all());

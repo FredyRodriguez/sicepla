@@ -3,9 +3,10 @@
 namespace App\Container\Sicepla\Src\Controllers;
 
 use Illuminate\Http\Request;
+use App\Container\Sicepla\Src\Requests\UserStoreRequest;
 use App\Container\Sicepla\Src\User;
 use App\Http\Controllers\Controller;
-use App\Container\Sicepla\Src\Requests\UserStoreRequest;
+
 
 class UserController extends Controller
 {
@@ -39,7 +40,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserStoreRequest $request)
     {
         $atributos = $request->only(
             'name',

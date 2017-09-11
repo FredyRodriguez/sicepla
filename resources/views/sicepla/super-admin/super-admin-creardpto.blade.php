@@ -1,6 +1,7 @@
 @extends('layouts.dash')
 @section('content')
 <div class="col-md-12">
+@include('sicepla.alerts.errors')
     @component('components.portlet', ['icon' => 'fa fa-users', 'title' => 'Crear Departamento'])
         <div id="app">
         {!! Form::open(['route'=>'departamentos.store','method'=>'POST']) !!}                        
