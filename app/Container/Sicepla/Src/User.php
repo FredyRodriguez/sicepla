@@ -28,7 +28,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name','telefono','documento','direccion', 'email', 'password', 'foto',
+        'name','telefono','documento','direccion', 'email', 'password', 'foto','FK_DepartamentoId',
     ];
 
     /**
@@ -63,5 +63,9 @@ class User extends Authenticatable
         return $this->belongsToMany(Proyecto::class, 'TBL_ProyectosAsignados', 'FK_UsuarioId', 'FK_ProyectoId')
             ->withPivot('tipo')
             ->withTimestamps();
+    }
+
+    public function departamento(){
+        return $this->belongsTo(Departamento::class,'FK_DepartamentoId','id');
     }
 }

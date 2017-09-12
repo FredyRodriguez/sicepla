@@ -20,7 +20,8 @@ class UserController extends Controller
     {
         // User::all();
 
-        $users = User::all();
+        $users = User::with('departamento')->get();
+        //$users = User::all();
         return view('sicepla.super-admin.super-admin-usuarios',compact('users'));
         //return User::all();
     }
@@ -50,7 +51,8 @@ class UserController extends Controller
             'documento',
             'direccion',
             'email',
-            'password'
+            'password',
+            'FK_DepartamentoId'
         );
         
         $user = new User($atributos);

@@ -49,7 +49,7 @@
                             <td>{{$user->documento}}</td>
                             <td>{{$user->direccion}}</td>
                             <td>{{$user->email}}</td>
-                            <td>{{$user->departamento}}</td>
+                            <td>{{$user->departamento->nombre}}</td>
                             <td>{!!Form::open(['method' => 'DELETE', 'route' => ['usuarios.destroy',$user->PK_id]])!!}
                                     {{ Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger'] )  }}
                                 {!!Form::close()!!}

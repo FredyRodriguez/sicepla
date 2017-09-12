@@ -25,9 +25,9 @@ class UserStoreRequest extends FormRequest
     {
         return [
             'name'=>'required|string|max:255',
-            'telefono' =>'required|integer|max:5',
-            'documento' =>'required|integer|max:9',
-            'direccion' => 'required|string|max:10',
+            'telefono' =>'required|integer',
+            'documento' =>'required|integer',
+            'direccion' => 'required|string|max:40',
             'email'=>'required|string|email|max:255|unique:TBL_Usuarios',
             'password'=>'required|string|min:7|confirmed',            
         ];

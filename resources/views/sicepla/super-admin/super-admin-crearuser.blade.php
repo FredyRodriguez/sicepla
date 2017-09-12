@@ -21,16 +21,16 @@
                     {!!Form::text('email',null,['class'=>'form-control','placeholder'=>'E-mail','required'])!!}
             </div>                            
             <div class="form-group form-md-line-input">                                 
-                {!!Form::password('contraseña',['class'=>'form-control','placeholder'=>'Contraseña','required'])!!}
+                {!!Form::password('password',['class'=>'form-control','placeholder'=>'Contraseña','required'])!!}
             </div>        
             <div class="form-group form-md-line-input">                                 
-                    {!!Form::password('confircontraseña',['class'=>'form-control','placeholder'=>'Confirmar Contraseña'])!!}
+                    {!!Form::password('password_confirmation',['class'=>'form-control','placeholder'=>'Confirmar Contraseña'])!!}
             </div>  
             <div class="form-group form-md-line-input">
             <label>Departamento</label>
-                <select class="form-control" name="" id="">
-                    @foreach($users as $user)
-                        <option>{{$user->nombre}}</option>
+                <select class="form-control" name="FK_DepartamentoId" id="" required="">
+                    @foreach($users as $departamento)
+                        <option value="{{$departamento->id}}">{{$departamento->nombre}}</option>
                     @endforeach
                 </select>
                 
