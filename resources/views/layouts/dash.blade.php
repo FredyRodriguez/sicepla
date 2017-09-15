@@ -4,15 +4,18 @@
   Dash del usuario, los links cambian segun el rol del usuario
 --}}
 @php
-  $role = auth()->user()->role;
+  $rol = auth()->user()->rol->nombre;
 @endphp
 
 @section('links')
   
 
-    {{--@includeWhen($role == 'admin', 'calisoft.admin.admin-dash') --}}
+    @includeWhen($rol == 'Super Administrador', 'sicepla.super-admin.super-admin-dash')
+    @includeWhen($rol == 'Administrador', 'sicepla.admin.administrador-dash')
+    @includeWhen($rol == 'Ayudante', 'sicepla.ayudante.ayudante-dash')
+    @includeWhen($rol == 'Empleado', 'sicepla.empleado.empleado-dash')
 
-   @include('sicepla.super-admin.super-admin-dash')
+   
 
   
 @endsection

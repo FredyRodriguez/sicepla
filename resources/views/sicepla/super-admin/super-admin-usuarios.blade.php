@@ -49,7 +49,11 @@
                             <td>{{$user->documento}}</td>
                             <td>{{$user->direccion}}</td>
                             <td>{{$user->email}}</td>
-                            <td>{{$user->departamento->nombre}}</td>
+                            @if(isset($user->departamento))
+                                <td>{{$user->departamento->nombre}}</td>
+                            @else
+                                <td>No Aplica</td>
+                            @endif
                             <td>{!!Form::open(['method' => 'DELETE', 'route' => ['usuarios.destroy',$user->PK_id]])!!}
                                     {{ Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger'] )  }}
                                 {!!Form::close()!!}

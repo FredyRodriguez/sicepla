@@ -21,13 +21,20 @@ class CreateUsersTable extends Migration
             $table->string('direccion')->nullable();
             $table->string('email')->unique();
             $table->string('password');
-            $table->integer('FK_DepartamentoId')->unsigned();
-            $table->string('foto')->nullable();           
+            $table->string('foto')->nullable();  
+            $table->integer('FK_RolesId')->unsigned();
+            $table->integer('FK_DepartamentoId')->unsigned()->nullable();
+                    
             $table->rememberToken();
             $table->timestamps();
 
+            $table->foreign('FK_RolesId')->references('id')
+            ->on('TBL_Roles')->onUpdate('cascade');
+
             $table->foreign('FK_DepartamentoId')->references('id')
             ->on('TBL_Departamento')->onUpdate('cascade');
+
+            
         });
     }
 

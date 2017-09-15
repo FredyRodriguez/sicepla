@@ -15,20 +15,44 @@ class UsersTableSeeder extends Seeder
             [
                 'name' => 'Code Freestyle',
                 'email' => 'root@app.com',
-                'FK_DepartamentoId' => '1',
-                'password' => bcrypt('12345')
+                'password' => bcrypt('12345'),
+                'FK_RolesId' => '1',
+                'FK_DepartamentoId' => null
             ],
             [
                 'name' => 'Paisa',
                 'email' => 'paisa@mail.com',
-                'FK_DepartamentoId' => '2',
-                'password' => bcrypt('12345')
+                'password' => bcrypt('12345'),
+                'FK_RolesId' => '2',
+                'FK_DepartamentoId' => null
             ],
             [
                 'name' => 'Fredo',
                 'email' => 'fredo@joya.joya',
-                'FK_DepartamentoId' => '3',
-                'password' => bcrypt('12345')
+                'password' => bcrypt('12345'),
+                'FK_RolesId' => '3',
+                'FK_DepartamentoId' => null
+            ],
+            [
+                'name' => 'Efrain',
+                'email' => 'efrain@gmail.com',                
+                'password' => bcrypt('12345'),
+                'FK_RolesId' => '4',
+                'FK_DepartamentoId' => '1'                
+            ],
+            [
+                'name' => 'Stevenson',
+                'email' => 'stevenson@gmail.com',
+                'password' => bcrypt('12345'),
+                'FK_RolesId' => '4',                
+                'FK_DepartamentoId' => '2'
+            ],
+            [
+                'name' => 'hector',
+                'email' => 'hector@gmail.com',
+                'password' => bcrypt('12345'),
+                'FK_RolesId' => '4',
+                'FK_DepartamentoId' => '3'
             ]
         ]);
     }

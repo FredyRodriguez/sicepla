@@ -7,6 +7,7 @@ use App\Container\Sicepla\Src\Requests\UserStoreRequest;
 use App\Container\Sicepla\Src\User;
 use App\Http\Controllers\Controller;
 use App\Container\Sicepla\Src\Departamento;
+use App\Container\Sicepla\Src\Roles;
 
 
 class UserController extends Controller
@@ -34,7 +35,8 @@ class UserController extends Controller
     public function create()
     {
         $users = Departamento::all();
-        return view('sicepla.super-admin.super-admin-crearuser',compact('users'));
+        $roles = Roles::all();
+        return view('sicepla.super-admin.super-admin-crearuser',compact('users','roles'));
     }
 
     /**
@@ -52,6 +54,7 @@ class UserController extends Controller
             'direccion',
             'email',
             'password',
+            'FK_RolesId',
             'FK_DepartamentoId'
         );
         

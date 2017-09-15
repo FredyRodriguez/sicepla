@@ -27,6 +27,15 @@
                     {!!Form::password('password_confirmation',['class'=>'form-control','placeholder'=>'Confirmar Contraseña'])!!}
             </div>  
             <div class="form-group form-md-line-input">
+            <label>Rol</label>
+                <select class="form-control" name="FK_RolesId" id="" required="">
+                    @foreach($roles as $rol)
+                        <option value="{{$rol->id}}">{{$rol->nombre}}</option>
+                    @endforeach
+                </select>                
+            </div>
+            
+            <div class="form-group form-md-line-input">
             <label>Departamento</label>
                 <select class="form-control" name="FK_DepartamentoId" id="" required="">
                     @foreach($users as $departamento)
