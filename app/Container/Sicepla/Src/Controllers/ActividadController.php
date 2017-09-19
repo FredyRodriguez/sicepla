@@ -5,6 +5,7 @@ namespace App\Container\Sicepla\Src\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Container\Sicepla\Src\Departamento;
+use App\Container\Sicepla\Src\Actividad;
 
 class ActividadController extends Controller
 {
@@ -36,9 +37,18 @@ class ActividadController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Departamento $departamento, Request $request)
     {
-        //
+        Actividad::create([
+            'nombre' => $request['nombre'],
+            'observacion' => $request['observacion'],
+            'tipo_entrega' => $request['tipoEntrega'],
+            'tipo_dia' => $request['tipoDia'],
+            'Num_Dia' => $request['num_dia'],
+            'fecha' => $request['fecha'],
+            'hora' => $request['hora']
+        ]);
+        return redirect('/actividad')->with('success','Actividad Creado Correctamente');
     }
 
     /**

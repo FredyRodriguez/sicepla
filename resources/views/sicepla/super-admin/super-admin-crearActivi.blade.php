@@ -4,12 +4,12 @@
 @include('sicepla.alerts.errors')
     @component('components.portlet', ['icon' => 'fa fa-users', 'title' => 'Crear Actividad para el departamento ' . $departamento->nombre])
         <div id="app">
-        {!! Form::open(['route'=>'departamentos.store','method'=>'POST']) !!}                        
+        {!! Form::open(['route'=>['actividad.store','departamento' =>$departamento->id],'method'=>'POST']) !!}                        
                 <div class="form-group form-md-line-input">                                 
                     {!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Nombre','required'])!!}
                 </div>
                 <div class="form-group form-md-line-input">
-                    {!!Form::text('descripcion',null,['class'=>'form-control','placeholder'=>'Observacion','required','maxlength'=>'85'])!!}
+                    {!!Form::text('observacion',null,['class'=>'form-control','placeholder'=>'Observacion','required','maxlength'=>'85'])!!}
                 </div>
                  <div class="form-group form-md-line-input">
                     <label>Tipo Entrega</label>
@@ -24,6 +24,7 @@
                 <div class="form-group form-md-line-input tipoDia1">
                     <label>Tipo Dia</label>
                     <select class="form-control" name="tipoDia" id="tipoDia" required="">                       
+                            <option value="">Seleccionar</option>
                             <option value="1">Lunes</option>
                             <option value="2">Martes</option>
                             <option value="3">Miercoles</option>
@@ -35,7 +36,7 @@
                 </div>
                 <div class="form-group form-md-line-input num_dia1">
                     <label>Dia del Mes</label>
-                    {!!Form::number('num_dia',null,['class'=>'form-control','placeholder'=>'Dia','required','min'=>'1','max'=>'30'])!!}
+                    {!!Form::number('num_dia',null,['class'=>'form-control','placeholder'=>'Dia','min'=>'1','max'=>'30'])!!}
                 </div>
                 <div class="form-group form-md-line-input fecha1">
                     <label class="">Fecha</label>
