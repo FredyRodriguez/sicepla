@@ -36,13 +36,13 @@
             </div>
             
             <div class="form-group form-md-line-input">
-            <label>Departamento</label>
-                <select class="form-control" name="FK_DepartamentoId" id="" required="">
+             <label>Departamento</label>
+                <select class="form-control" name="FK_DepartamentoId" id="" >
+                    <option value="">Super Admin, Admin, Ayudante</option>
                     @foreach($users as $departamento)
                         <option value="{{$departamento->id}}">{{$departamento->nombre}}</option>
                     @endforeach
-                </select>
-                
+                </select>                
             </div>
             {!! Form::submit('registrar', ['class'=>'btn green-jungle']) !!}
             </div>                        

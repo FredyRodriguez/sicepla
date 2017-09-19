@@ -62,6 +62,7 @@
                     <thead>
                         <th class="text-center">Nombre</th>
                         <th class="text-center">Descripcion</th>
+                        <th class="text-center">Actividades</th>
                         <th class="text-center">Editar</th>
                         <th class="text-center">Eliminar</th>
                     </thead>
@@ -70,9 +71,9 @@
                         <tr  class="text-center">
                             <td>{{$departamento->nombre}}</td>
                             <td>{{$departamento->descripcion}}</td>
+                            <td>{{link_to_route('actividad.index', $title = '', $parameter = $departamento->id, $attributes = ['class' => 'btn btn-simple btn-info btn-icon edit icon-eye'])}}</td>
                             <td>{{link_to_route('departamentos.edit', $title = '', $parameter = $departamento->id, $attributes = ['class' => 'btn btn-simple btn-warning btn-icon edit icon-pencil'])}}
                             </td>
-
                             <td>@include('sicepla.super-admin.super-admin-deletedepartamento')
                             </td>
                         </tr>

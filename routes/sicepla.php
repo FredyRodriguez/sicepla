@@ -1,6 +1,5 @@
 <?php
 Route::resource('usuarios','UserController');
-
 Route::resource('departamentos', 'DepartamentoController');
 
 Route::prefix('/perfil')->group(function (){
@@ -9,3 +8,9 @@ Route::prefix('/perfil')->group(function (){
     Route::post('password', 'PerfilController@updatePassword')->name('perfil.password');
     Route::post('foto', 'PerfilController@fotoUp')->name('perfil.foto');
 });
+
+Route::prefix('departamentos/{departamento}')->group(function () {
+    Route::resource('actividad','ActividadController');
+});
+
+//Route::resource('actividad','ActividadController');

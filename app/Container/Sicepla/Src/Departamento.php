@@ -13,4 +13,8 @@ class Departamento extends Model
     public function usuario(){
         return $this->hasMany(User::class,'FK_DepartamentoId','id');
     }
+
+    public function actividad(){
+        return $this->hasMany(Actividad::class,'FK_DepartamentoId','id');
+    }
 }

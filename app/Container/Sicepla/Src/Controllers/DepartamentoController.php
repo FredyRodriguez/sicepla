@@ -115,4 +115,5 @@ class DepartamentoController extends Controller
       Departamento::destroy($departamento);
       return redirect('/departamentos')->with('error','Departamento Eliminado Correctamente');
     }
+
 }
