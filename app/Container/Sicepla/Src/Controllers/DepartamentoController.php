@@ -7,6 +7,7 @@ use App\Container\Sicepla\Src\Requests\DeptoStoreRequest;
 use App\Container\Sicepla\Src\Requests\DeptoUpdateRequest;
 use App\Http\Controllers\Controller;
 use App\Container\Sicepla\Src\Departamento;
+use App\Container\Sicepla\Src\Actividad;
 
 class DepartamentoController extends Controller
 {
@@ -64,7 +65,15 @@ class DepartamentoController extends Controller
      */
     public function show($id)
     {
-        //
+      /*$id = Actividad::
+                    select('tbl_actividad.nombre','tbl_actividad.tipo_entrega','tbl_actividad.tipo_dia', 'tbl_actividad.Num_Dia',
+                           'tbl_actividad.fecha', 'tbl_actividad.hora','tbl_actividad.observacion')
+                          ->join('tbl_departamento','tbl_actividad.FK_DepartamentoId','=','tbl_departamento.id')
+                          ->where('tbl_departamento.id','=', $id)
+                          ->get();
+      return view('sicepla.super-admin.super-admin-actividad', [
+          'actividades'  => $id,
+      ]);*/
     }
 
     /**

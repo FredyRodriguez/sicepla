@@ -14,11 +14,13 @@ class ActividadController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index(Departamento $departamento)
     {
-        return view('sicepla.super-admin.super-admin-actividad', [
-            'departamento' => $departamento->load('actividad')
-        ]);
+
+      return view('sicepla.super-admin.super-admin-actividad', [
+          'departamento' => $departamento->load('actividad'),
+      ]);
     }
 
     /**
@@ -46,9 +48,10 @@ class ActividadController extends Controller
             'tipo_dia' => $request['tipoDia'],
             'Num_Dia' => $request['num_dia'],
             'fecha' => $request['fecha'],
-            'hora' => $request['hora']
+            'hora' => $request['hora'],
+            'FK_DepartamentoId' => $departamento->id ,
         ]);
-        return redirect('/actividad')->with('success','Actividad Creado Correctamente');
+        return redirect('/departamentos')->with('success','Actividad Creado Correctamente');
     }
 
     /**
@@ -59,7 +62,15 @@ class ActividadController extends Controller
      */
     public function show($id)
     {
-        return view('sicepla.super-admin.super-admin-actividad');
+      $id = Actividad::
+                    select('tbl_actividad.nombre','tbl_actividad.tipo_entrega','tbl_actividad.tipo_dia', 'tbl_actividad.Num_Dia',
+                           'tbl_actividad.fecha', 'tbl_actividad.hora','tbl_actividad.observacion')
+                          ->join('tbl_departamento','tbl_actividad.FK_DepartamentoId','=','tbl_departamento.id')
+                          ->where('tbl_departamento.id','=', $id)
+                          ->get();
+      return view('sicepla.super-admin.super-admin-actividad', [
+          'actividades'  => $id,
+      ]);
     }
 
     /**
@@ -70,7 +81,10 @@ class ActividadController extends Controller
      */
     public function edit($id)
     {
-        //
+      return view('sicepla.super-admin.super-admin-actividad', [
+          'departamento' => $departamento->load('actividad'),
+          'actividad'    => $actividad,
+      ]);
     }
 
     /**
