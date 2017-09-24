@@ -32,23 +32,27 @@
             <div class="table-responsive">
                <table id="data" class="table table-hover table-bordered table-condensed">
                    <thead>
+                     <th class="text-center">ID</th>
                        <th class="text-center">Nombre</th>
                        <th class="text-center">Dia</th>
                        <th class="text-center">Numero Dia</th>
                        <th class="text-center">Fecha</th>
                        <th class="text-center">Hora</th>
                        <th class="text-center">Observacion</th>
+                       <th class="text-center"> Eliminar</th>
                    </thead>
 
                    <tbody>
                      @foreach($actividades as $actividad)
                        <tr  class="text-center">
+                           <td>{{$actividad->id}}</td>
                            <td>{{$actividad->nombre}}</td>
                            <td>{{$actividad->tipo_dia}}</td>
                            <td>{{$actividad->Num_Dia}}</td>
                            <td>{{$actividad->fecha}}</td>
                            <td>{{$actividad->hora}}</td>
                            <td>{{$actividad->observacion}}</td>
+                           <td>@include('sicepla.super-admin.super-admin-deleteactividad')
                        </tr>
                        @endforeach
                    </tbody>
