@@ -63,7 +63,7 @@ class ActividadController extends Controller
     public function show($id)
     {
       $id = Actividad::
-                    select('tbl_actividad.id','tbl_actividad.nombre','tbl_actividad.tipo_entrega','tbl_actividad.tipo_dia', 'tbl_actividad.Num_Dia',
+                    select('tbl_actividad.nombre','tbl_actividad.tipo_entrega','tbl_actividad.tipo_dia', 'tbl_actividad.Num_Dia',
                            'tbl_actividad.fecha', 'tbl_actividad.hora','tbl_actividad.observacion')
                           ->join('tbl_departamento','tbl_actividad.FK_DepartamentoId','=','tbl_departamento.id')
                           ->where('tbl_departamento.id','=', $id)
@@ -105,9 +105,8 @@ class ActividadController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($actividad)
+    public function destroy($id)
     {
-      Actividad::destroy($actividad);
-      return redirect('/departamentos')->with('error','Actividad Eliminada Correctamente');
+        //
     }
 }
