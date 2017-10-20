@@ -282,7 +282,10 @@ class ComposerStaticInitb6c7833d141a1b027837ea1c7e0434a3
 
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Container\\Sicepla\\Src\\Actividad' => __DIR__ . '/../..' . '/app/Container/Sicepla/Src/Actividad.php',
+        'App\\Container\\Sicepla\\Src\\Controllers\\ActividadController' => __DIR__ . '/../..' . '/app/Container/Sicepla/Src/Controllers/ActividadController.php',
         'App\\Container\\Sicepla\\Src\\Controllers\\DepartamentoController' => __DIR__ . '/../..' . '/app/Container/Sicepla/Src/Controllers/DepartamentoController.php',
+        'App\\Container\\Sicepla\\Src\\Controllers\\FormatoController' => __DIR__ . '/../..' . '/app/Container/Sicepla/Src/Controllers/FormatoController.php',
         'App\\Container\\Sicepla\\Src\\Controllers\\PerfilController' => __DIR__ . '/../..' . '/app/Container/Sicepla/Src/Controllers/PerfilController.php',
         'App\\Container\\Sicepla\\Src\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Container/Sicepla/Src/Controllers/UserController.php',
         'App\\Container\\Sicepla\\Src\\Departamento' => __DIR__ . '/../..' . '/app/Container/Sicepla/Src/Departamento.php',
@@ -292,6 +295,7 @@ class ComposerStaticInitb6c7833d141a1b027837ea1c7e0434a3
         'App\\Container\\Sicepla\\Src\\Requests\\PerfilPasswordRequest' => __DIR__ . '/../..' . '/app/Container/Sicepla/Src/Requests/PerfilPasswordRequest.php',
         'App\\Container\\Sicepla\\Src\\Requests\\PerfilUpdateRequest' => __DIR__ . '/../..' . '/app/Container/Sicepla/Src/Requests/PerfilUpdateRequest.php',
         'App\\Container\\Sicepla\\Src\\Requests\\UserStoreRequest' => __DIR__ . '/../..' . '/app/Container/Sicepla/Src/Requests/UserStoreRequest.php',
+        'App\\Container\\Sicepla\\Src\\Roles' => __DIR__ . '/../..' . '/app/Container/Sicepla/Src/Roles.php',
         'App\\Container\\Sicepla\\Src\\User' => __DIR__ . '/../..' . '/app/Container/Sicepla/Src/User.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -320,7 +324,9 @@ class ComposerStaticInitb6c7833d141a1b027837ea1c7e0434a3
         'Collective\\Html\\HtmlBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlBuilder.php',
         'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
+        'CreateActividadTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_18_023407_create_actividad_table.php',
         'CreateDepartTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_05_165999_create_depart_table.php',
+        'CreateFormatoTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_20_013423_create_formato_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_05_166100_create_password_resets_table.php',
         'CreateRoleTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_05_165998_create_role_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_05_166000_create_users_table.php',

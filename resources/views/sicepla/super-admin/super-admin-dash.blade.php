@@ -11,3 +11,10 @@
     'link' => route('departamentos.index')
 ])
 @endcomponent
+
+@component('components.nav-link', [
+    'icon' => 'fa fa-book',
+    'title' => 'Formatos',
+    'link' => route('formatos.index')
+])
+@endcomponent

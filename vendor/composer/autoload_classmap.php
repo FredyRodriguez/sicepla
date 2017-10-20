@@ -7,7 +7,10 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
+    'App\\Container\\Sicepla\\Src\\Actividad' => $baseDir . '/app/Container/Sicepla/Src/Actividad.php',
+    'App\\Container\\Sicepla\\Src\\Controllers\\ActividadController' => $baseDir . '/app/Container/Sicepla/Src/Controllers/ActividadController.php',
     'App\\Container\\Sicepla\\Src\\Controllers\\DepartamentoController' => $baseDir . '/app/Container/Sicepla/Src/Controllers/DepartamentoController.php',
+    'App\\Container\\Sicepla\\Src\\Controllers\\FormatoController' => $baseDir . '/app/Container/Sicepla/Src/Controllers/FormatoController.php',
     'App\\Container\\Sicepla\\Src\\Controllers\\PerfilController' => $baseDir . '/app/Container/Sicepla/Src/Controllers/PerfilController.php',
     'App\\Container\\Sicepla\\Src\\Controllers\\UserController' => $baseDir . '/app/Container/Sicepla/Src/Controllers/UserController.php',
     'App\\Container\\Sicepla\\Src\\Departamento' => $baseDir . '/app/Container/Sicepla/Src/Departamento.php',
@@ -17,6 +20,7 @@ return array(
     'App\\Container\\Sicepla\\Src\\Requests\\PerfilPasswordRequest' => $baseDir . '/app/Container/Sicepla/Src/Requests/PerfilPasswordRequest.php',
     'App\\Container\\Sicepla\\Src\\Requests\\PerfilUpdateRequest' => $baseDir . '/app/Container/Sicepla/Src/Requests/PerfilUpdateRequest.php',
     'App\\Container\\Sicepla\\Src\\Requests\\UserStoreRequest' => $baseDir . '/app/Container/Sicepla/Src/Requests/UserStoreRequest.php',
+    'App\\Container\\Sicepla\\Src\\Roles' => $baseDir . '/app/Container/Sicepla/Src/Roles.php',
     'App\\Container\\Sicepla\\Src\\User' => $baseDir . '/app/Container/Sicepla/Src/User.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -45,7 +49,9 @@ return array(
     'Collective\\Html\\HtmlBuilder' => $vendorDir . '/laravelcollective/html/src/HtmlBuilder.php',
     'Collective\\Html\\HtmlFacade' => $vendorDir . '/laravelcollective/html/src/HtmlFacade.php',
     'Collective\\Html\\HtmlServiceProvider' => $vendorDir . '/laravelcollective/html/src/HtmlServiceProvider.php',
+    'CreateActividadTable' => $baseDir . '/database/migrations/2017_09_18_023407_create_actividad_table.php',
     'CreateDepartTable' => $baseDir . '/database/migrations/2017_06_05_165999_create_depart_table.php',
+    'CreateFormatoTable' => $baseDir . '/database/migrations/2017_10_20_013423_create_formato_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2017_06_05_166100_create_password_resets_table.php',
     'CreateRoleTable' => $baseDir . '/database/migrations/2017_06_05_165998_create_role_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2017_06_05_166000_create_users_table.php',

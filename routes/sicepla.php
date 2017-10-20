@@ -18,4 +18,4 @@ Route::prefix('departamentos/{departamento}')->group(function () {
         ->name('actividad');*/
 });
 
-//Route::resource('actividad','ActividadController');
+Route::resource('formatos','FormatoController');

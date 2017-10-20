@@ -72,4 +72,8 @@ class User extends Authenticatable
     public function rol(){
         return $this->belongsTo(Roles::class,'FK_RolesId','id');
     }
+
+    public function formato(){
+        return $this->hasMany();
+    }
 }
