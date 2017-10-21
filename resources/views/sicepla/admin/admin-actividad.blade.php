@@ -20,15 +20,6 @@
 {{--Fin Mensaje Confirmar--}}
     @component('components.portlet', ['icon' => 'fa fa-users', 'title' => 'Actividades'])
         <div id="app">
-        {{--boton crear departamento--}}
-          {{--  <div>
-                <a href="{{route('actividad.create',['departamento' => $departamento])}}" class="btn green-jungle">
-                    <i class="fa fa-plus"></i>
-                       Crear Actividad
-                </a>
-             </div>  --}} <br>
-             {{--fin boton crear departamento--}}
-            {{--inicio tabla--}}
             <div class="table-responsive">
                <table id="data" class="table table-hover table-bordered table-condensed">
                    <thead>
@@ -38,7 +29,6 @@
                        <th class="text-center">Fecha</th>
                        <th class="text-center">Hora</th>
                        <th class="text-center">Observacion</th>
-                       <th class="text-center">Eliminar</th>
                    </thead>
 
                    <tbody>

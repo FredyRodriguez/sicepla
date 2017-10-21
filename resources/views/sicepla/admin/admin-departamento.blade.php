@@ -18,48 +18,33 @@
 @include('sicepla.alerts.error')
 @include('sicepla.alerts.errors')
 {{--Fin Mensaje Confirmar--}}
-    @component('components.portlet', ['icon' => 'fa fa-users', 'title' => 'Actividades'])
-        <div id="app">
-        {{--boton crear departamento--}}
-          {{--  <div>
-                <a href="{{route('actividad.create',['departamento' => $departamento])}}" class="btn green-jungle">
-                    <i class="fa fa-plus"></i>
-                       Crear Actividad
-                </a>
-             </div>  --}} <br>
-             {{--fin boton crear departamento--}}
+    @component('components.portlet', ['icon' => 'fa fa-object-group', 'title' => 'Departamento'])
+        <div id="app">            
             {{--inicio tabla--}}
             <div class="table-responsive">
-               <table id="data" class="table table-hover table-bordered table-condensed">
-                   <thead>
-                       <th class="text-center">Nombre</th>
-                       <th class="text-center">Dia</th>
-                       <th class="text-center">Numero Dia</th>
-                       <th class="text-center">Fecha</th>
-                       <th class="text-center">Hora</th>
-                       <th class="text-center">Observacion</th>
-                       <th class="text-center">Eliminar</th>
-                   </thead>
-
-                   <tbody>
-                     @foreach($actividades as $actividad)
-                       <tr  class="text-center">
-                           <td>{{$actividad->nombre}}</td>
-                           <td>{{$actividad->tipo_dia}}</td>
-                           <td>{{$actividad->Num_Dia}}</td>
-                           <td>{{$actividad->fecha}}</td>
-                           <td>{{$actividad->hora}}</td>
-                           <td>{{$actividad->observacion}}</td>
-                       </tr>
-                       @endforeach
-                   </tbody>
-               </table>
-             </div>
+                <table id="data"  class="table table-hover table-bordered table-condensed">
+                    <thead>
+                        <th class="text-center">Nombre</th>
+                        <th class="text-center">Descripcion</th>
+                        <th class="text-center">Actividades</th>                        
+                    </thead>
+                    <tbody>
+                        @foreach($departamentos as $departamento)
+                        <tr  class="text-center">
+                            <td>{{$departamento->nombre}}</td>
+                            <td>{{$departamento->descripcion}}</td>
+                            <td>{{link_to_route('admin_actividad.show', $title = '', $parameter = $departamento->id, $attributes = ['class' => 'btn btn-simple btn-info btn-icon edit icon-eye'])}}</td>                            
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+            {{--fin tabla--}}
         </div>
+
     @endcomponent
 </div>
 @endsection
-
 @push('styles')
   <link rel="stylesheet" href="/assets/global/plugins/bootstrap-select/css/bootstrap-select.min.css">
 @endpush

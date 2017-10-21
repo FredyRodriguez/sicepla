@@ -1,4 +1,6 @@
 <?php
+//Rutas Super Administrador
+
 Route::resource('usuarios','UserController');
 Route::resource('departamentos', 'DepartamentoController');
 
@@ -19,3 +21,18 @@ Route::prefix('departamentos/{departamento}')->group(function () {
 });
 
 Route::resource('formatos','FormatoController');
+
+//Rutas administrador
+
+Route::resource('admindepto', 'AdmindeptoController');
+
+Route::prefix('admindepto/{departamento}')->group(function () {
+    Route::get('admin_actividad','AdminActividadController@index')->name('admin_actividad.index');
+    
+    Route::get('admin_actividad','AdminActividadController@show')->name('admin_actividad.show');
+});
+
+
+//Rutas Ayudante
+
+Route::resource('activtemporal', 'AyudActiTempoController');
