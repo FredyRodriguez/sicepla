@@ -50,6 +50,7 @@
                            <td>{{$actividad->fecha}}</td>
                            <td>{{$actividad->hora}}</td>
                            <td>{{$actividad->observacion}}</td>
+                           <td>@include('sicepla.super-admin.super-admin-deleteactividad')</td> 
                        </tr>
                        @endforeach
                    </tbody>
