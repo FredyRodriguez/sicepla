@@ -2,8 +2,8 @@ jQuery(document).ready(function () {
 
         var tabla_novedades = $('#data').DataTable({
             lengthMenu: [
-                [5, 10, 25, 50, -1],
-                [5, 10, 25, 50, "Todo"]
+                [3, 5, 10, 25, 50, -1],
+                [3, 5, 10, 25, 50, "Todo"]
             ],
             responsive: true,
             columnDefs: [
@@ -43,7 +43,7 @@ jQuery(document).ready(function () {
 
             ],
             tabIndex: -1,
-            pageLength: 10,
+            pageLength: 5,
             dom: "<'row' <'col-md-12'B>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r><'table-scrollable't><'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>",
         });
     });

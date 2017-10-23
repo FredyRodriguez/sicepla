@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Container\Sicepla\Src\Formatos;
 
 class LoginController extends Controller
 {
@@ -30,6 +31,19 @@ class LoginController extends Controller
     protected function redirectTo()
     {
         return route('home');
+    }
+
+    /**
+     * Show the application's login form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showLoginForm()
+    {
+        $formatos = Formatos::all();
+        return view('auth.login',[
+            'formatos' => $formatos,
+        ]);
     }
 
 

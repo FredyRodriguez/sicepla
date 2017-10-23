@@ -11,7 +11,7 @@
 |
  */
 
-Route::resource('notificaciones', 'NotificationController', [
+/*Route::resource('notificaciones', 'NotificationController', [
     'only' => ['index', 'store']
 ]);
 
@@ -104,3 +104,4 @@ Route::post('fileSql','ArchivoSqlController@postfile');
 Route::resource('documentacion-sql','ArchivoSqlController',[
     'only' =>['index','store','update','destroy'],
 ]);
+*/
