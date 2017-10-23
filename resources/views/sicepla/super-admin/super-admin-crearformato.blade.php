@@ -12,7 +12,7 @@
                  {!!Form::text('descripcion',null,['class'=>'form-control','placeholder'=>'Descripcion','required','maxlength'=>'85'])!!}
             </div>     
             <div class="form-group form-md-line-input">
-                <input type="file" class="form-control" name="file">
+                <input type="file" class="form-control" name="url">
             </div>                                           
             {!! Form::submit('registrar', ['class'=>'btn green-jungle']) !!}
             </div>                        

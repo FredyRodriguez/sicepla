@@ -25,6 +25,7 @@ class FormatoStoreRequest extends FormRequest
     {
         return [
             'nombre' => 'required|unique:TBL_Formatos',
+            'url' => 'required|mimes:pdf|max:10000',
             
         ];
     }

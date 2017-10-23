@@ -43,12 +43,7 @@
                         <tr  class="text-center">
                             <td>{{$formato->nombre}}</td>
                             <td>{{$formato->descripcion}}</td>
-                            {{--@if(isset($user->departamento))
-                                <td>{{$user->departamento->nombre}}</td>
-                            @else
-                                <td>No Aplica</td>
-                            @endif--}}
-                            <td></td>
+                            <td><a href="SuperAdmin/Formatos\{{$formato->url}}" target="_blank"><button type="button" class="btn btn-info" title="Visualizar"><i class="fa fa-eye"></i></button></a></td>
                             <td>{!!Form::open(['method' => 'DELETE', 'route' => ['formatos.destroy',$formato->id]])!!}
                                     {{ Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger'] )  }}
                                 {!!Form::close()!!}

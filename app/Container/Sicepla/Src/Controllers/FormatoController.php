@@ -42,10 +42,15 @@ class FormatoController extends Controller
      */
     public function store(FormatoStoreRequest $request)
     {
-        $archivo = $request->file('file');   
-        //$url = rand(1000, 9999) . '_' . $archivo->getClientOriginalName($archivo);     
-        $url = Storage::disk('formatos')->putFile('archivo',$archivo);
-        //dd($url);
+        $url = "";
+        if ($request->hasFile('url')) {
+          $url = "Formato".'.'.time().'.'.$request->url->getClientOriginalExtension();
+          $request->url->move(public_path('SuperAdmin/Formatos'), $url);
+        } else {
+          if ('url' == null) {
+            $url = "";
+          }
+        }
 
         Formatos::create([
             'nombre' => $request['nombre'],
