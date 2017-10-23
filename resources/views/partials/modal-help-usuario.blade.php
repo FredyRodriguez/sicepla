@@ -16,10 +16,10 @@
                 <div id="collapse2" class="panel-collapse collapse">
                     <div class="panel-body">
                       <ul>
-                        <li>Crear usuarios con roles de Administrador o Evaluador.</li>
+                        <li>Crear usuarios.</li>
                         <li>Buscar usuarios segun su contenido.</li>
-                        <li>Visualizar usuarios registrados en la plataforma CaliSoft.</li>
-                        <li>Eliminar usuarios registrados en la plataforma CaliSoft.</li>
+                        <li>Visualizar usuarios registrados en la plataforma Sicepla.</li>
+                        <li>Eliminar usuarios registrados en la plataforma Sicepla.</li>
                       </ul>
                   </div>
                 </div>

@@ -47,7 +47,8 @@
             {!! Form::submit('registrar', ['class'=>'btn green-jungle']) !!}
             </div>                        
             {!! Form::close() !!}
-        </div>        
+        </div>       
+        @include('partials.modal-help-crear-usuario') 
     @endcomponent
 </div>
 @endsection

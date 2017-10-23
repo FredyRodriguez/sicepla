@@ -85,7 +85,7 @@
             </div>
             {{--fin tabla--}}
         </div>
-
+    @include('partials.modal-help-departamento')
     @endcomponent
 </div>
 @endsection

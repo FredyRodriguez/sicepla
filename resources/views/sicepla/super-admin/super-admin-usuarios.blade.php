@@ -64,6 +64,7 @@
                 </table>
             </div>
         </div>
+        @include('partials.modal-help-usuario')
     @endcomponent
 </div>
 @endsection

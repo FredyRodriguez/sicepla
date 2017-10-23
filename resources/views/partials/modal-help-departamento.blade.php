@@ -2,7 +2,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Ayuda Modulo Subir Archivo Sql</h5>
+        <h5 class="modal-title">Ayuda Modulo Usuario</h5>
       </div>
       <div class="modal-body">
         <div class="panel-group" id="accordion">
@@ -10,14 +10,19 @@
                 <div class="panel-heading" style="background-color:#0E3D38;">
                     <h4 class="panel-title" >
                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                            <label class="font-white">Funciones Modulo Subir Archivo Sql</label></a>
+                            <label class="font-white">Funciones Modulo Departamento</label></a>
                     </h4>
                 </div>
                 <div id="collapse2" class="panel-collapse collapse">
                     <div class="panel-body">
                       <ul>
-                        <li>Subir archivo de bases de datos con extension (".SQL"), solo permite cargar un archivo para la calificación del codigo.</li>                        
-                        <li>Eliminar el archivo de bases de datos cargado para la calificación.</li>
+                        <li>Crear Departamentos o Dependencias.</li>
+                        <li>Buscar Departamentos o Dependencias segun su contenido.</li>
+                        <li>Visualizar Departamentos o Dependencias registrados en la plataforma Sicepla.</li>
+                        <li>Ver las actividades que tiene cada Departamento o Dependencia</li>
+                        <li>Crear actividades necesarias para cada Departamento o Dependencia</li>
+                        <li>Editar datos del Departamento o Dependencia</li>
+                        <li>Eliminar Departamentos o Dependencias registrados en la plataforma Sicepla.</li>
                       </ul>
                   </div>
                 </div>
