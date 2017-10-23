@@ -4,6 +4,10 @@ namespace App\Container\Sicepla\Src\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Container\Sicepla\Src\Formatos;
+use App\Container\Sicepla\Src\Requests\FormatoStoreRequest;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class FormatoController extends Controller
 {
@@ -14,7 +18,10 @@ class FormatoController extends Controller
      */
     public function index()
     {
-        return view('sicepla.super-admin.super-admin-formatos');
+        $formatos = Formatos::all();
+        return view('sicepla.super-admin.super-admin-formatos',[
+            'formatos' => $formatos,
+        ]);
     }
 
     /**
@@ -33,9 +40,19 @@ class FormatoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormatoStoreRequest $request)
     {
-        //
+        $archivo = $request->file('file');   
+        //$url = rand(1000, 9999) . '_' . $archivo->getClientOriginalName($archivo);     
+        $url = Storage::disk('formatos')->putFile('archivo',$archivo);
+        //dd($url);
+
+        Formatos::create([
+            'nombre' => $request['nombre'],
+            'descripcion' => $request['descripcion'],
+            'url' => $url,
+        ]);
+        return redirect('/formatos')->with('success','Formato Creado Correctamente');   
     }
 
     /**
@@ -80,6 +97,9 @@ class FormatoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $formato = Formatos::find($id);
+        Storage::disk('formatos')->delete($formato->url);
+        $formato->delete();
+        return redirect('/formatos')->with('error','Formato Eliminado Correctamente');
     }
 }

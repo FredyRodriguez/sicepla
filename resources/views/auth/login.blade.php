@@ -108,8 +108,14 @@
                     <a href="{{ route('register') }}" class="font-blue-dark">
                         Registrarse
                     </a>
+                </div><br>
+                <div>
+                    <a  href="{{route('departamentos.create')}}" class="btn green">
+                        <i class="fa fa-plus"></i>
+                        Formatos
+                    </a>
                 </div>
-            </div>
+            </div>            
         </div>
     </form>
     <!-- END : LOGIN PAGE 5-1 -->

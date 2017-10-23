@@ -33,30 +33,29 @@
                 <table id="data" class="table table-hover table-bordered table-condensed">
                     <thead>
                         <th class="text-center">Nombre</th>
+                        <th class="text-center">Descripcion</th>
                         <th class="text-center">Visualizar</th>
                         <th class="text-center">Eliminar</th>
                     </thead>
 
-                    {{---<tbody>
-                      @foreach($users as $user)
+                    <tbody>
+                      @foreach($formatos as $formato)
                         <tr  class="text-center">
-                            <td>{{$user->name}}</td>
-                            <td>{{$user->telefono}}</td>
-                            <td>{{$user->documento}}</td>
-                            <td>{{$user->direccion}}</td>
-                            <td>{{$user->email}}</td>
-                            @if(isset($user->departamento))
+                            <td>{{$formato->nombre}}</td>
+                            <td>{{$formato->descripcion}}</td>
+                            {{--@if(isset($user->departamento))
                                 <td>{{$user->departamento->nombre}}</td>
                             @else
                                 <td>No Aplica</td>
-                            @endif
-                            <td>{!!Form::open(['method' => 'DELETE', 'route' => ['usuarios.destroy',$user->PK_id]])!!}
+                            @endif--}}
+                            <td></td>
+                            <td>{!!Form::open(['method' => 'DELETE', 'route' => ['formatos.destroy',$formato->id]])!!}
                                     {{ Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger'] )  }}
                                 {!!Form::close()!!}
                             </td>
                         </tr>
                         @endforeach
-                    </tbody> --}}
+                    </tbody> 
                 </table>
             </div>
         </div>

@@ -65,6 +65,12 @@ return [
             'url' => '/storage/uploads/sql',
             'visibility' => 'public',
         ],
+        'formatos'=> [
+            'driver' => 'local',
+            'root' => storage_path('app/public/formatos'),
+            'url' => '/storage',
+            'visibility' => 'public',    
+        ],
 
         'public' => [
             'driver' => 'local',

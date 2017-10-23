@@ -15,14 +15,9 @@ class CreateFormatoTable extends Migration
     {
         Schema::create('TBL_Formatos', function (Blueprint $table){
             $table->increments('id');
-            $table->string('url');
+            $table->string('url')->nullable();
             $table->string('nombre')->unique();
-            $table->string('descripcion')->nullable();            
-            $table->integer('FK_Usuarios')->unsigned();
-
-            $table->foreign('FK_Usuarios')->references('PK_id')
-            ->on('TBL_Usuarios')->onUpdate('cascade');
-
+            $table->string('descripcion')->nullable();
             $table->timestamps();
         });
     }
