@@ -16,10 +16,10 @@
                     <label>Tipo Entrega</label>
                     <select class="form-control" name="tipoEntrega" id="tipoEntrega" required="">
                             <option value="">Seleccionar</option>
-                            <option value="1">Dia</option>
-                            <option value="2">Diario</option>
-                            <option value="3">Semanal</option>
-                            <option value="4">Mensual</option>
+                            <option value="Dia">Dia</option>
+                            <option value="Diario">Diario</option>
+                            <option value="Semanal">Semanal</option>
+                            <option value="Mensual">Mensual</option>
                     </select>
                 </div>
                 <div class="form-group form-md-line-input tipoDia1">
@@ -53,7 +53,6 @@
 </div>
 @endsection
 @push('functions')
-<script src="{{ asset('js/jquery-3.2.1.min.js') }}" type="text/javascript"></script>
 <script>
 jQuery(document).ready(function(){
     $('.fecha1').hide();
@@ -63,28 +62,28 @@ jQuery(document).ready(function(){
 
     $("#tipoEntrega").on('change',function(){
     var tipo = $('select[name="tipoEntrega"]').val();
-    if(tipo == 1){
+    if(tipo == 'Dia'){
         $('.fecha1').show();
         $('.hora1').show();
         $('.num_dia1').hide();
         $('.tipoDia1').hide();
 
     }
-    if(tipo == 2){
+    if(tipo == 'Diario'){
         $('.fecha1').hide();
         $('.hora1').show();
         $('.num_dia1').hide();
         $('.tipoDia1').hide();
 
     }
-    if(tipo == 3){
+    if(tipo == 'Semanal'){
         $('.fecha1').hide();
         $('.tipoDia1').show();
         $('.hora1').show();
         $('.num_dia1').hide();
 
     }
-    if(tipo == 4){
+    if(tipo == 'Mensual'){
         $('.fecha1').hide();
         $('.hora1').hide();
         $('.num_dia1').show();
