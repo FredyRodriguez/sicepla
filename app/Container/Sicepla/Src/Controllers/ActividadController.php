@@ -41,16 +41,18 @@ class ActividadController extends Controller
      */
     public function store(Departamento $departamento, Request $request)
     {
+       // dump($request['tipoDia']);
         Actividad::create([
             'nombre' => $request['nombre'],
             'observacion' => $request['observacion'],
             'tipo_entrega' => $request['tipoEntrega'],
             'tipo_dia' => $request['tipoDia'],
             'Num_Dia' => $request['num_dia'],
-            'fecha' => $request['fecha'],
-            'hora' => $request['hora'],
+            'fecha' => $request['fechaD'],
+            'hora' => $request['horaD'],
             'FK_DepartamentoId' => $departamento->id ,
         ]);
+        
         return redirect('/departamentos')->with('success','Actividad Creado Correctamente');
     }
 

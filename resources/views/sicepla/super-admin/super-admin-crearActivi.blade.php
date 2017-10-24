@@ -24,15 +24,15 @@
                 </div>
                 <div class="form-group form-md-line-input tipoDia1">
                     <label>Tipo Dia</label>
-                    <select class="form-control" name="tipoDia" id="tipoDia" required="">
+                    <select class="form-control" name="tipoDia" id="tipoDia" >
                             <option value="">Seleccionar</option>
-                            <option value="1">Lunes</option>
-                            <option value="2">Martes</option>
-                            <option value="3">Miercoles</option>
-                            <option value="4">Jueves</option>
-                            <option value="5">Viernes</option>
-                            <option value="6">Sabado</option>
-                            <option value="7">Domingo</option>
+                            <option value="Lunes">Lunes</option>
+                            <option value="Martes">Martes</option>
+                            <option value="Miercoles">Miercoles</option>
+                            <option value="Jueves">Jueves</option>
+                            <option value="Viernes">Viernes</option>
+                            <option value="Sabado">Sabado</option>
+                            <option value="Domingo">Domingo</option>
                     </select>
                 </div>
                 <div class="form-group form-md-line-input num_dia1">
@@ -41,11 +41,11 @@
                 </div>
                 <div class="form-group form-md-line-input fecha1">
                     <label class="">Fecha</label>
-                    {!! Form::date('fecha', \Carbon\Carbon::now(),['class'=>'form-control'])!!}
+                    {!! Form::date('fechaD', \Carbon\Carbon::now(),['class'=>'form-control'])!!}
                 </div>
                 <div class="form-group form-md-line-input hora1">
                     <label>Hora</label>
-                    {!! Form::time('hora', \Carbon\Carbon::now(),['class'=>'form-control'])!!}
+                    {!! Form::time('horaD', \Carbon\Carbon::now(),['class'=>'form-control'])!!}
                 </div>
                 {!! Form::submit('registrar', ['class'=>'btn green-jungle']) !!}
             {!! Form::close() !!}

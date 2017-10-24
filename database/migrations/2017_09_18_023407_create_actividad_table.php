@@ -17,7 +17,7 @@ class CreateActividadTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->enum('tipo_entrega',['Dia','Diario','Semanal','Mensual'])->nullable();
-            $table->enum('tipo_dia',['Lunes','Martes','Miercoles','Jueves','Viernes','Sabado','Domingo']);
+            $table->enum('tipo_dia',['Lunes','Martes','Miercoles','Jueves','Viernes','Sabado','Domingo'])->nullable();
             $table->integer('Num_Dia')->nullable();
             $table->date('fecha')->nullable();
             $table->time('hora')->nullable();            
