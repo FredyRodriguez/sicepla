@@ -41,7 +41,7 @@
                 </div>
                 <div class="form-group form-md-line-input fecha1">
                     <label class="">Fecha</label>
-                    {!! Form::date('fechaD', \Carbon\Carbon::now(),['class'=>'form-control'])!!}
+                    {!! Form::date('fechaD', null,['class'=>'form-control'])!!}
                 </div>
                 <div class="form-group form-md-line-input hora1">
                     <label>Hora</label>
