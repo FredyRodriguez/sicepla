@@ -24,6 +24,7 @@ Route::resource('formatos','FormatoController');
 //Rutas administrador
 
 Route::resource('admindepto', 'AdmindeptoController');
+Route::resource('admintempo', 'AdminActivTempoController');
 
 Route::prefix('admindepto/{departamento}')->group(function () {
     Route::get('admin_actividad','AdminActividadController@index')->name('admin_actividad.index');

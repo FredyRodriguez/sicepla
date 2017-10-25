@@ -25,7 +25,7 @@
                 <div>
                     <a  href="{{route('departamentos.create')}}" class="btn green-jungle">
                         <i class="fa fa-plus"></i>
-                        Crear Departamento
+                        Crear Dependencia
                     </a>
                 </div>
 

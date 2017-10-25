@@ -7,7 +7,7 @@
 
 @component('components.nav-link', [
     'icon' => 'fa fa-handshake-o',
-    'title' => 'Actividades Temporales',
+    'title' => 'Plazos Temporales',
     'link' => route('activtemporal.index')
 ])
 @endcomponent

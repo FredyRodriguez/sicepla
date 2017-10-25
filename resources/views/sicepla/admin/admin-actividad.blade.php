@@ -28,7 +28,7 @@
                        <th class="text-center">Numero Dia</th>
                        <th class="text-center">Fecha</th>
                        <th class="text-center">Hora</th>
-                       <th class="text-center">Observacion</th>
+                       <th class="text-center">Observación</th>
                    </thead>
 
                    <tbody>

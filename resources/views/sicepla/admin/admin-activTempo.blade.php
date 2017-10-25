@@ -22,12 +22,7 @@
         <div id="app">
 
             {{--boton crear actividad temporal--}}
-                <div>
-                    <a  href="{{route('activtemporal.create')}}" class="btn green-jungle">
-                        <i class="fa fa-plus"></i>
-                        Crear Plazo Temporal
-                    </a>
-                </div><br>
+                
 
             {{--fin boton crear departamento--}}
             
@@ -41,8 +36,9 @@
                         <th class="text-center">Dia del Mes</th>
                         <th class="text-center">Fecha</th>
                         <th class="text-center">Hora</th>
-                        <th class="text-center">Visualizar</th>
-                        <th class="text-center">Eliminar</th>
+                        <th class="text-center">Observación</th>
+                        <th class="text-center">Ver</th>
+                        <th class="text-center">Agregar Observación</th>
                     </thead>
                     <tbody>
                         @foreach($plazos as $plazo)
@@ -50,7 +46,7 @@
                             <td>{{$plazo->nombre}}</td>
                             <td>{{$plazo->departamento->nombre}}</td>
                             @if(isset($plazo->tipo_dia))
-                            <td>{{$plazo->tipo_dia}}</td>
+                                <td>{{$plazo->tipo_dia}}</td>
                             @else
                                 <td>x</td>
                             @endif
@@ -61,18 +57,18 @@
                             @endif
                             @if(isset($plazo->fecha))
                                 <td>{{$plazo->fecha}}</td>
-                             @else
+                            @else
                                 <td>x</td>
                             @endif
                             @if(isset($plazo->hora))
-                                 <td>{{$plazo->hora}}</td>
-                             @else
+                                <td>{{$plazo->hora}}</td>
+                            @else
                                 <td>x</td>
                             @endif
+                            <td>{{$plazo->observacion}}</td>
                             <td><a href="Ayudante/Formatos\{{$plazo->url}}" target="_blank"><button type="button" class="btn btn-info" title="Visualizar"><i class="fa fa-eye"></i></button></a></td>
-                            <td>{!!Form::open(['method' => 'DELETE', 'route' => ['activtemporal.destroy',$plazo->id]])!!}
-                                    {{ Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger'] )  }}
-                                {!!Form::close()!!}
+                            <td>
+                            {{link_to_route('admintempo.edit', $title = '', $parameter = $plazo->id, $attributes = ['class' => 'btn btn-simple btn-warning btn-icon edit icon-pencil'])}}
                             </td>
                         </tr>
                         @endforeach
