@@ -23,7 +23,7 @@
 
             {{--boton crear actividad temporal--}}
                 <div>
-                    <a  href="{{route('departamentos.create')}}" class="btn green-jungle">
+                    <a  href="{{route('activtemporal.create')}}" class="btn green-jungle">
                         <i class="fa fa-plus"></i>
                         Crear Actividad Temporal
                     </a>
@@ -36,7 +36,7 @@
                 <table id="data"  class="table table-hover table-bordered table-condensed">
                     <thead>
                         <th class="text-center">Nombre</th>
-                        <th class="text-center">Departamento</th>
+                        <th class="text-center">Dependencia</th>
                         <th class="text-center">Descripcion</th>
                         <th class="text-center">Eliminar</th>
                     </thead>
