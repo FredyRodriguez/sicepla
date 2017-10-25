@@ -10,13 +10,13 @@
                 <div class="panel-heading" style="background-color:#0E3D38;">
                     <h4 class="panel-title" >
                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                            <label class="font-white">Funciones Modulo Crear Departamento</label></a>
+                            <label class="font-white">Funciones Modulo Crear Dependencia</label></a>
                     </h4>
                 </div>
                 <div id="collapse2" class="panel-collapse collapse">
                     <div class="panel-body">
                       <ul>
-                        <li>Registrar Departamento segun su nombre y descripción adecuada.</li>
+                        <li>Registrar Dependencia segun su nombre y descripción adecuada.</li>
                       </ul>
                   </div>
                 </div>

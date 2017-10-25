@@ -18,7 +18,7 @@
 @include('sicepla.alerts.error')
 @include('sicepla.alerts.errors')
 {{--Fin Mensaje Confirmar--}}
-    @component('components.portlet', ['icon' => 'fa fa-object-group', 'title' => 'Departamento'])
+    @component('components.portlet', ['icon' => 'fa fa-object-group', 'title' => 'Dependencia'])
         <div id="app">
 
             {{--boton crear departamento--}}
@@ -35,7 +35,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Crear Departamento</h4>
+                            <h4 class="modal-title">Crear Dependencia</h4>
                         </div>
                         <div class="modal-body">
                         {!! Form::open(['route'=>'departamentos.store','method'=>'POST']) !!}
@@ -61,9 +61,9 @@
                 <table id="data"  class="table table-hover table-bordered table-condensed">
                     <thead>
                         <th class="text-center">Nombre</th>
-                        <th class="text-center">Descripcion</th>
-                        <th class="text-center">Actividades</th>
-                        <th class="text-center">Crear Actividad</th>
+                        <th class="text-center">Descripción</th>
+                        <th class="text-center">Plazos</th>
+                        <th class="text-center">Crear Plazos</th>
                         <th class="text-center">Editar</th>
                         <th class="text-center">Eliminar</th>
                     </thead>

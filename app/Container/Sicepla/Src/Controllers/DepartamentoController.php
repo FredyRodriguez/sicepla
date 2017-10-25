@@ -46,7 +46,7 @@ class DepartamentoController extends Controller
             'nombre' => $request['nombre'],
             'descripcion' => $request['descripcion'],
         ]);
-        return redirect('/departamentos')->with('success','Departamento Creado Correctamente');
+        return redirect('/departamentos')->with('success','Dependencia Creada Correctamente');
 /*
         $atributos = $request->only(
             'nombre',
@@ -110,7 +110,7 @@ class DepartamentoController extends Controller
       $depar = Departamento::find($departamento);
       $depar->fill($request->all());
       $depar->save();
-      return redirect('/departamentos')->with('success','Departamento Modificado Correctamente');
+      return redirect('/departamentos')->with('success','Dependencia Modificada Correctamente');
     }
 
     /**
@@ -122,7 +122,7 @@ class DepartamentoController extends Controller
     public function destroy($departamento)
     {
       Departamento::destroy($departamento);
-      return redirect('/departamentos')->with('error','Departamento Eliminado Correctamente');
+      return redirect('/departamentos')->with('error','Dependencia Eliminada Correctamente');
     }
 
 }

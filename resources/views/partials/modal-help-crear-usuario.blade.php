@@ -18,8 +18,8 @@
                       <ul>
                         <li>Registrar Usuarios segun sus datos personales.</li>
                         <li>Asignarle un rol adecuado para cada usuario registrado.</li>
-                        <li>Si el rol es de "Super Administrador", "Administrador", "Ayudante" no es necesario asiganerle un departamento.</li>
-                        <li>Si el rol es "Empleado" debe asignar un departamento.</li>
+                        <li>Si el rol es de "Super Administrador", "Comandante de Unidad", "Ayudante" no es necesario asiganerle un dependencia.</li>
+                        <li>Si el rol es "Jefe de Dependencia" debe asignar una dependencia.</li>
                       </ul>
                   </div>
                 </div>

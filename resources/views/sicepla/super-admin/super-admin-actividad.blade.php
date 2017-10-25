@@ -18,7 +18,7 @@
 @include('sicepla.alerts.error')
 @include('sicepla.alerts.errors')
 {{--Fin Mensaje Confirmar--}}
-    @component('components.portlet', ['icon' => 'fa fa-users', 'title' => 'Actividades'])
+    @component('components.portlet', ['icon' => 'fa fa-users', 'title' => 'Plazos'])
         <div id="app">
         {{--boton crear departamento--}}
           {{--  <div>

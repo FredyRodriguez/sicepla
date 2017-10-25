@@ -2,7 +2,7 @@
 @section('content')
 <div class="col-md-12">
 @include('sicepla.alerts.errors')
-    @component('components.portlet', ['icon' => 'fa fa-users', 'title' => 'Editar Departamento'])
+    @component('components.portlet', ['icon' => 'fa fa-users', 'title' => 'Editar Dependencia'])
         <div id="app">
         {!!Form::model($departamento, ['route' => ['departamentos.update',$departamento], 'method' => 'PUT','files' => true, 'enctype'=>'multipart/form-data'])!!}
             <div class="form-group form-md-line-input">

@@ -53,7 +53,7 @@ class ActividadController extends Controller
             'FK_DepartamentoId' => $departamento->id ,
         ]);
         
-        return redirect('/departamentos')->with('success','Actividad Creado Correctamente');
+        return redirect('/departamentos')->with('success','Plazo Creado Correctamente');
     }
 
     /**
@@ -110,6 +110,6 @@ class ActividadController extends Controller
     public function destroy($actividad)
     {
          Actividad::destroy($actividad); 
-      return redirect('/departamentos')->with('error','Actividad Eliminada Correctamente'); 
+      return redirect('/departamentos')->with('error','Plazo Eliminado Correctamente'); 
     }
 }

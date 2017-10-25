@@ -10,19 +10,19 @@
                 <div class="panel-heading" style="background-color:#0E3D38;">
                     <h4 class="panel-title" >
                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                            <label class="font-white">Funciones Modulo Departamento</label></a>
+                            <label class="font-white">Funciones Modulo Dependencia</label></a>
                     </h4>
                 </div>
                 <div id="collapse2" class="panel-collapse collapse">
                     <div class="panel-body">
                       <ul>
-                        <li>Crear Departamentos o Dependencias.</li>
-                        <li>Buscar Departamentos o Dependencias segun su contenido.</li>
-                        <li>Visualizar Departamentos o Dependencias registrados en la plataforma Sicepla.</li>
-                        <li>Ver las actividades que tiene cada Departamento o Dependencia</li>
-                        <li>Crear actividades necesarias para cada Departamento o Dependencia</li>
-                        <li>Editar datos del Departamento o Dependencia</li>
-                        <li>Eliminar Departamentos o Dependencias registrados en la plataforma Sicepla.</li>
+                        <li>Crear Dependencias.</li>
+                        <li>Buscar Dependencias segun su contenido.</li>
+                        <li>Visualizar Dependencias registrados en la plataforma Sicepla.</li>
+                        <li>Ver los plazos que tiene cada Dependencia</li>
+                        <li>Crear plazos necesarias para cada Dependencia</li>
+                        <li>Editar datos de la Dependencia</li>
+                        <li>Eliminar Dependencias registradas en la plataforma Sicepla.</li>
                       </ul>
                   </div>
                 </div>

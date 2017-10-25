@@ -2,7 +2,7 @@
 @section('content')
 <div class="col-md-12">
 @include('sicepla.alerts.errors')
-    @component('components.portlet', ['icon' => 'fa fa-users', 'title' => 'Crear Actividad para el departamento ' . $departamento->nombre])
+    @component('components.portlet', ['icon' => 'fa fa-users', 'title' => 'Crear Plazo para la Dependencia ' . $departamento->nombre])
         <div id="app">
         {!! Form::open(['route'=>['actividad.store','departamento' =>$departamento->id],'method'=>'POST']) !!}
                                
@@ -10,7 +10,7 @@
                     {!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Nombre','required'])!!}
                 </div>
                 <div class="form-group form-md-line-input">
-                    {!!Form::text('observacion',null,['class'=>'form-control','placeholder'=>'Observacion','required','maxlength'=>'85'])!!}
+                    {!!Form::text('observacion',null,['class'=>'form-control','placeholder'=>'Observación','required','maxlength'=>'85'])!!}
                 </div>
                  <div class="form-group form-md-line-input">
                     <label>Tipo Entrega</label>

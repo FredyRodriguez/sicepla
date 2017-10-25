@@ -37,7 +37,7 @@
                         <th class="text-center">Documento</th>
                         <th class="text-center">Direccion</th>
                         <th class="text-center">E-mail</th>
-                        <th class="text-center">Departamento</th>
+                        <th class="text-center">Dependencia</th>
                         <th class="text-center">Eliminar</th>
                     </thead>
 

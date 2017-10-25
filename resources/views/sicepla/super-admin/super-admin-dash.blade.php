@@ -7,7 +7,7 @@
 
 @component('components.nav-link', [
     'icon' => 'fa fa-object-group',
-    'title' => 'Departamento',
+    'title' => 'Dependecias',
     'link' => route('departamentos.index')
 ])
 @endcomponent

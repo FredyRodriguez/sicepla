@@ -36,9 +36,9 @@
             </div>
             
             <div class="form-group form-md-line-input">
-             <label>Departamento</label>
+             <label>Dependencia</label>
                 <select class="form-control" name="FK_DepartamentoId" id="" >
-                    <option value="">Super Admin, Admin, Ayudante</option>
+                    <option value="">Seleccionar</option>
                     @foreach($users as $departamento)
                         <option value="{{$departamento->id}}">{{$departamento->nombre}}</option>
                     @endforeach
