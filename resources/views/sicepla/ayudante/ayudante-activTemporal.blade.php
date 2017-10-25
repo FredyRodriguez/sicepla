@@ -18,14 +18,14 @@
 @include('sicepla.alerts.error')
 @include('sicepla.alerts.errors')
 {{--Fin Mensaje Confirmar--}}
-    @component('components.portlet', ['icon' => 'fa fa-object-group', 'title' => 'Actividades Temporales'])
+    @component('components.portlet', ['icon' => 'fa fa-object-group', 'title' => 'Plazos Temporales'])
         <div id="app">
 
             {{--boton crear actividad temporal--}}
                 <div>
                     <a  href="{{route('activtemporal.create')}}" class="btn green-jungle">
                         <i class="fa fa-plus"></i>
-                        Crear Actividad Temporal
+                        Crear Plazo Temporal
                     </a>
                 </div><br>
 
@@ -37,22 +37,45 @@
                     <thead>
                         <th class="text-center">Nombre</th>
                         <th class="text-center">Dependencia</th>
-                        <th class="text-center">Descripcion</th>
+                        <th class="text-center">Dia</th>
+                        <th class="text-center">Dia del Mes</th>
+                        <th class="text-center">Fecha</th>
+                        <th class="text-center">Hora</th>
+                        <th class="text-center">Visualizar</th>
                         <th class="text-center">Eliminar</th>
                     </thead>
                     <tbody>
-                       {{-- @foreach($departamentos as $departamento)
+                        @foreach($plazos as $plazo)
                         <tr  class="text-center">
-                            <td>{{$departamento->nombre}}</td>
-                            <td>{{$departamento->descripcion}}</td>
-                            <td>{{link_to_route('actividad.show', $title = '', $parameter = $departamento->id, $attributes = ['class' => 'btn btn-simple btn-info btn-icon edit icon-eye'])}}</td>
-                            <td>{{link_to_route('actividad.create', $title = '', $parameter = $departamento->id, $attributes = ['class' => 'btn btn-simple btn-success btn-icon edit icon-plus'])}}</td>
-                            <td>{{link_to_route('departamentos.edit', $title = '', $parameter = $departamento->id, $attributes = ['class' => 'btn btn-simple btn-warning btn-icon edit icon-pencil'])}}
-                            </td>
-                            <td>@include('sicepla.super-admin.super-admin-deletedepartamento')
+                            <td>{{$plazo->nombre}}</td>
+                            <td>{{$plazo->departamento->nombre}}</td>
+                            @if(isset($plazo->tipo_dia))
+                                <td>{{$plazo->tipo_dia}}</td>
+                            @else
+                                <td>x</td>
+                            @endif
+                            @if(isset($plazo->Num_Dia))
+                                <td>{{$plazo->Num_Dia}}</td>
+                             @else
+                                <td>x</td>
+                            @endif
+                            @if(isset($plazo->fecha))
+                                <td>{{$plazo->fecha}}</td>
+                            @else
+                                <td>x</td>
+                            @endif
+                            @if(isset($plazo->hora))
+                                <td>{{$plazo->hora}}</td>
+                            @else
+                                <td>x</td>
+                            @endif
+                            <td><a href="Ayudante/Formatos\{{$plazo->url}}" target="_blank"><button type="button" class="btn btn-info" title="Visualizar"><i class="fa fa-eye"></i></button></a></td>
+                            <td>{!!Form::open(['method' => 'DELETE', 'route' => ['activtemporal.destroy',$plazo->id]])!!}
+                                    {{ Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger'] )  }}
+                                {!!Form::close()!!}
                             </td>
                         </tr>
-                        @endforeach--}}
+                        @endforeach
                     </tbody>
                 </table>
             </div>

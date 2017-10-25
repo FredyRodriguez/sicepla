@@ -4,13 +4,10 @@
 @include('sicepla.alerts.errors')
     @component('components.portlet', ['icon' => 'fa fa-users', 'title' => 'Crear Plazos Temporales'])
         <div id="app">
-        {!! Form::open(['route'=>['activtemporal.store'],'method'=>'POST']) !!}
+        {!! Form::open(['route'=>['activtemporal.store'],'method'=>'POST','enctype'=>'multipart/form-data']) !!}
                                
                 <div class="form-group form-md-line-input">
                     {!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Nombre','required'])!!}
-                </div>
-                <div class="form-group form-md-line-input">
-                    {!!Form::text('observacion',null,['class'=>'form-control','placeholder'=>'Observación','required','maxlength'=>'85'])!!}
                 </div>
                 <div class="form-group form-md-line-input">
                 <label>Dependencia</label>
@@ -53,7 +50,7 @@
                 </div>
                 <div class="form-group form-md-line-input hora1">
                     <label>Hora</label>
-                    {!! Form::time('horaD', \Carbon\Carbon::now(),['class'=>'form-control'])!!}
+                    {!! Form::time('horaD', null,['class'=>'form-control'])!!}
                 </div>
                 <div class="form-group form-md-line-input">
                      <input type="file" class="form-control" name="url">

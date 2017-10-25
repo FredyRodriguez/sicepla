@@ -45,7 +45,7 @@
                 </div>
                 <div class="form-group form-md-line-input hora1">
                     <label>Hora</label>
-                    {!! Form::time('horaD', \Carbon\Carbon::now(),['class'=>'form-control'])!!}
+                    {!! Form::time('horaD', null,['class'=>'form-control'])!!}
                 </div>
                 {!! Form::submit('registrar', ['class'=>'btn green-jungle']) !!}
             {!! Form::close() !!}

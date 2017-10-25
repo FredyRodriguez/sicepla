@@ -25,8 +25,8 @@
                 <table id="data"  class="table table-hover table-bordered table-condensed">
                     <thead>
                         <th class="text-center">Nombre</th>
-                        <th class="text-center">Descripcion</th>
-                        <th class="text-center">Actividades</th>                        
+                        <th class="text-center">Descripción</th>
+                        <th class="text-center">Plazos</th>                        
                     </thead>
                     <tbody>
                         @foreach($departamentos as $departamento)

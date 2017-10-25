@@ -19,7 +19,9 @@ class AyudActiTempoController extends Controller
      */
     public function index()
     {
-        return view('sicepla.ayudante.ayudante-activTemporal');
+        //$plazos = ActividadTemporal::all();
+        $plazos = ActividadTemporal::with('departamento')->get();
+        return view('sicepla.ayudante.ayudante-activTemporal',compact('plazos'));
     }
 
     /**
@@ -53,7 +55,7 @@ class AyudActiTempoController extends Controller
 
         ActividadTemporal::create([
             'nombre' => $request['nombre'],
-            'observacion' => $request['observacion'],
+            //'observacion' => $request['observacion'],
             'FK_DepartamentoId' => $request['FK_DepartamentoId'],
             'tipo_entrega' => $request['tipoEntrega'],
             'tipo_dia' => $request['tipoDia'],
@@ -107,6 +109,9 @@ class AyudActiTempoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $plazo = ActividadTemporal::find($id);
+        Storage::disk('formatos')->delete($plazo->url);
+        $plazo->delete();
+        return redirect('/activtemporal')->with('error','Formato Eliminado Correctamente');
     }
 }

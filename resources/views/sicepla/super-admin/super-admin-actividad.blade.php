@@ -44,12 +44,29 @@
                    <tbody>
                      @foreach($actividades as $actividad)
                        <tr  class="text-center">
-                           <td>{{$actividad->nombre}}</td>
-                           <td>{{$actividad->tipo_dia}}</td>
-                           <td>{{$actividad->Num_Dia}}</td>
-                           <td>{{$actividad->fecha}}</td>
-                           <td>{{$actividad->hora}}</td>
-                           <td>{{$actividad->observacion}}</td>
+                            <td>{{$actividad->nombre}}</td>
+                           
+                           @if(isset($actividad->tipo_dia))
+                                <td>{{$actividad->tipo_dia}}</td>
+                            @else
+                                <td>x</td>
+                            @endif
+                            @if(isset($actividad->Num_Dia))
+                                <td>{{$actividad->Num_Dia}}</td>
+                             @else
+                                <td>x</td>
+                            @endif
+                            @if(isset($actividad->fecha))
+                                <td>{{$actividad->fecha}}</td>
+                            @else
+                                <td>x</td>
+                            @endif
+                            @if(isset($actividad->hora))
+                                <td>{{$actividad->hora}}</td>
+                            @else
+                                <td>x</td>
+                            @endif
+                            <td>{{$actividad->observacion}}</td>
                            <td>@include('sicepla.super-admin.super-admin-deleteactividad')</td> 
                        </tr>
                        @endforeach
