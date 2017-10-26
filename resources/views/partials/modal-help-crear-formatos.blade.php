@@ -2,7 +2,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Ayuda Modulo Proyecto</h5>
+        <h5 class="modal-title">Ayuda Modulo Crear Formatos</h5>
       </div>
       <div class="modal-body">
         <div class="panel-group" id="accordion">
@@ -10,14 +10,14 @@
               <div class="panel-heading" style="background-color:#0E3D38;">
                 <h4 class="panel-title" >
                   <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                    <label class="font-white">Funciones Modulo Proyectos</label></a>
+                    <label class="font-white">Funciones Modulo Crear Formatos</label></a>
                 </h4>
               </div>
             <div id="collapse2" class="panel-collapse collapse">
               <div class="panel-body">
                 <ul>
-                  <li>Buscar proyectos dependiendo de su categoria.</li>
-                  <li>Visualizar datos de proyectos registrados en la plataforma CaliSoft por los estudiantes.</li>
+                  <li>Crear nombre y descripciòn del formato a subir.</li>
+                  <li>Cargar formato que desea mostrar a los usuarios para su descarga respectiva, el tipo del formato debe ser .pdf.</li>
                 </ul>
               </div>
             </div>

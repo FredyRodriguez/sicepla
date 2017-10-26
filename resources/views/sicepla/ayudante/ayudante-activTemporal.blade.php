@@ -81,7 +81,7 @@
             </div>
             {{--fin tabla--}}
         </div>
-
+    @include('partials.modal-help-plazos-temporales')
     @endcomponent
 </div>
 @endsection

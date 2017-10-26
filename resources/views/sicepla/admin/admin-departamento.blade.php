@@ -41,7 +41,7 @@
             </div>
             {{--fin tabla--}}
         </div>
-
+        @include('partials.modal-help-ver-depto')
     @endcomponent
 </div>
 @endsection

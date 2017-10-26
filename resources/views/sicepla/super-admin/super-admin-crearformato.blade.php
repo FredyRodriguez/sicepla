@@ -18,6 +18,7 @@
             </div>                        
             {!! Form::close() !!}
         </div>        
+        @include('partials.modal-help-crear-formatos') 
     @endcomponent
 </div>
 @endsection

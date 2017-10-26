@@ -68,6 +68,7 @@
                </table>
              </div>
         </div>
+         @include('partials.modal-help-ver-actividades')
     @endcomponent
 </div>
 @endsection

@@ -16,13 +16,11 @@
                 <div id="collapse2" class="panel-collapse collapse">
                     <div class="panel-body">
                       <ul>
-                        <li>Crear Dependencias.</li>
-                        <li>Buscar Dependencias segun su contenido.</li>
-                        <li>Visualizar Dependencias registrados en la plataforma Sicepla.</li>
-                        <li>Ver los plazos que tiene cada Dependencia</li>
-                        <li>Crear plazos necesarias para cada Dependencia</li>
-                        <li>Editar datos de la Dependencia</li>
-                        <li>Eliminar Dependencias registradas en la plataforma Sicepla.</li>
+                        <li>Crear Plazos Temporales.</li>
+                        <li>Buscar Plazos Temporales segun su contenido.</li>
+                        <li>Visualizar Plazos Temporales registrados en la plataforma Sicepla.</li>
+                        <li>Ver formato del Plazos Temporales</li>
+                        <li>Eliminar Plazos Temporales registradas en la plataforma Sicepla.</li>
                       </ul>
                   </div>
                 </div>

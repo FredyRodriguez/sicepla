@@ -74,6 +74,7 @@
                </table>
              </div>
         </div>
+        @include('partials.modal-help-actividad')
     @endcomponent
 </div>
 @endsection

@@ -54,6 +54,7 @@
                 </table>
             </div>
         </div>
+        @include('partials.modal-help-formatos')
     @endcomponent
 </div>
 @endsection

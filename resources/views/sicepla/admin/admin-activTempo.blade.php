@@ -77,7 +77,7 @@
             </div>
             {{--fin tabla--}}
         </div>
-
+       @include('partials.modal-help-ver-activTempo')
     @endcomponent
 </div>
 @endsection

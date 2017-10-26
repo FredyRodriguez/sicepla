@@ -57,6 +57,7 @@
                 </div>
                 {!! Form::submit('registrar', ['class'=>'btn green-jungle']) !!}
             {!! Form::close() !!}
+            @include('partials.modal-help-crear-activTempo')
     @endcomponent
 </div>
 @endsection

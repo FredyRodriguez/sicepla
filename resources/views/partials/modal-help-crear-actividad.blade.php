@@ -2,7 +2,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Ayuda Modulo Dependencia</h5>
+        <h5 class="modal-title">Ayuda Modulo Crear Plazos</h5>
       </div>
       <div class="modal-body">
         <div class="panel-group" id="accordion">
@@ -10,19 +10,17 @@
                 <div class="panel-heading" style="background-color:#0E3D38;">
                     <h4 class="panel-title" >
                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                            <label class="font-white">Funciones Modulo Dependencia</label></a>
+                            <label class="font-white">Funciones Modulo Crear Plazos</label></a>
                     </h4>
                 </div>
                 <div id="collapse2" class="panel-collapse collapse">
                     <div class="panel-body">
                       <ul>
-                        <li>Crear Dependencias.</li>
-                        <li>Buscar Dependencias segun su contenido.</li>
-                        <li>Visualizar Dependencias registrados en la plataforma Sicepla.</li>
-                        <li>Ver los plazos que tiene cada Dependencia</li>
-                        <li>Crear plazos necesarias para cada Dependencia</li>
-                        <li>Editar datos de la Dependencia</li>
-                        <li>Eliminar Dependencias registradas en la plataforma Sicepla.</li>
+                        <li>Crear plazo segun su tipo de entrega:</li>
+                        <li>Dia: Debe ingresar fechar y hora para ser cumplida.</li>
+                        <li>Diario: Debe ingrear hora para ser cumplida.</li>
+                        <li>Semanal: Debe ingrear tipo dia (lunes, martes, miercoles, etc) y hora para ser cumplida.</li>
+                        <li>Mes: Debe ingrear dia de mes entre el rango permitido para ser cumplida.</li>
                       </ul>
                   </div>
                 </div>
