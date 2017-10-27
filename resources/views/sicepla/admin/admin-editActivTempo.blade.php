@@ -2,7 +2,7 @@
 @section('content')
 <div class="col-md-12">
 @include('sicepla.alerts.errors')
-    @component('components.portlet', ['icon' => 'fa fa-users', 'title' => 'Agrergar Observaciòn Plazos Temporales'])
+    @component('components.portlet', ['icon' => 'fa fa-users', 'title' => 'Agregar Observaciòn Plazos Temporales'])
         <div id="app">
         {!!Form::model($admintempo, ['route' => ['admintempo.update', $admintempo], 'method' => 'PUT','files' => true, 'enctype'=>'multipart/form-data'])!!}
             <div class="row">

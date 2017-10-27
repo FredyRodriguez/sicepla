@@ -60,7 +60,7 @@ class AdminActivTempoController extends Controller
      */
     public function edit($admintempo)
     {
-        $plazos = ActividadTemporal::find($admintempo);
+        $plazos = ActividadTemporal::with('departamento')->find($admintempo);
         return view('sicepla.admin.admin-editActivTempo',[
           'admintempo' => $plazos,
         ]);

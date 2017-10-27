@@ -8,6 +8,7 @@ use App\Container\Sicepla\Src\User;
 use App\Http\Controllers\Controller;
 use App\Container\Sicepla\Src\Departamento;
 use App\Container\Sicepla\Src\Roles;
+use App\Container\Sicepla\Src\Notifications\UsuarioCreado;
 
 
 class UserController extends Controller
@@ -60,8 +61,11 @@ class UserController extends Controller
         
         $user = new User($atributos);
         $user->password = bcrypt($user->password);
+        
         $user->save();
+        $user->notify(new UsuarioCreado($request->password));
         return redirect()->route('usuarios.index')->with('success','Usuario Creado Correctamente');
+        return $user;
     }
 
     /**
