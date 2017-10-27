@@ -22,6 +22,7 @@ class CreateActividadTable extends Migration
             $table->date('fecha')->nullable();
             $table->time('hora')->nullable();            
             $table->string('observacion')->nullable();
+            $table->string('url')->nullable();
             $table->integer('FK_DepartamentoId')->unsigned();
             $table->timestamps();
 

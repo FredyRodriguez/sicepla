@@ -36,3 +36,6 @@ Route::prefix('admindepto/{departamento}')->group(function () {
 //Rutas Ayudante
 
 Route::resource('activtemporal', 'AyudActiTempoController');
+
+//Rutas Jefe Dependencia
+Route::resource('jefedepto', 'JefedeptoController');

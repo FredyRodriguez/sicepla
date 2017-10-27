@@ -8,7 +8,7 @@ class Departamento extends Model
 {
     protected $table = "TBL_Departamento";
     protected $primarykey = "id";
-    protected $fillable = ['nombre','descripcion'];
+    protected $fillable = ['nombre','descripcion', 'url'];
 
     public function usuario(){
         return $this->hasMany(User::class,'FK_DepartamentoId','id');
