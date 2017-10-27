@@ -24,6 +24,7 @@ class CreateActivTemporalTable extends Migration
             $table->enum('tipo_dia',['Lunes','Martes','Miercoles','Jueves','Viernes','Sabado','Domingo'])->nullable();                
             $table->integer('FK_DepartamentoId')->unsigned();
             $table->string('url')->nullable();
+            $table->string('url_plazo')->nullable();
             $table->timestamps();
 
             $table->foreign('FK_DepartamentoId')->references('id')

@@ -39,3 +39,5 @@ Route::resource('activtemporal', 'AyudActiTempoController');
 
 //Rutas Jefe Dependencia
 Route::resource('jefedepto', 'JefedeptoController');
+
+Route::resource('jefeacttemp', 'JefeActTempController');

@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Container\Sicepla\Src\Departamento;
 use App\Container\Sicepla\Src\Actividad;
+use App\Container\Sicepla\Src\ActividadTemporal;
 use App\Container\Sicepla\Src\User;
 use Illuminate\Support\Facades\Auth;
 
-class JefedeptoController extends Controller
+class JefeActTempController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,15 +21,15 @@ class JefedeptoController extends Controller
     {
         $id = Auth::id();
         $jefes = Departamento::
-                    select('tbl_actividad.id' ,'tbl_usuarios.FK_DepartamentoId','tbl_departamento.nombre as nombredepar', 'tbl_actividad.nombre as nombreacti',
-                           'tbl_actividad.tipo_entrega', 'tbl_actividad.tipo_dia','tbl_actividad.Num_Dia',
-                           'tbl_actividad.fecha','tbl_actividad.hora','tbl_actividad.observacion', 'tbl_actividad.url')
+                    select('tbl_activtemporal.id' ,'tbl_usuarios.FK_DepartamentoId','tbl_departamento.nombre as nombredepar', 'tbl_activtemporal.nombre as nombreacti',
+                           'tbl_activtemporal.tipo_entrega', 'tbl_activtemporal.tipo_dia','tbl_activtemporal.Num_Dia',
+                           'tbl_activtemporal.fecha','tbl_activtemporal.hora','tbl_activtemporal.observacion', 'tbl_activtemporal.url', 'tbl_activtemporal.url_plazo')
                           ->join('tbl_usuarios','tbl_usuarios.FK_DepartamentoId','=','tbl_departamento.id')
-                          ->join('tbl_actividad','tbl_actividad.FK_DepartamentoId','=','tbl_departamento.id')
+                          ->join('tbl_activtemporal','tbl_activtemporal.FK_DepartamentoId','=','tbl_departamento.id')
                           ->where('tbl_usuarios.PK_id','=', $id)
                           ->get();
 
-        return view('sicepla.empleado.empleado-departamento',[
+        return view('sicepla.empleado.empleado-acttemporales',[
           'jefes' => $jefes,
         ]);
     }
@@ -73,8 +74,8 @@ class JefedeptoController extends Controller
      */
     public function edit($id)
     {
-        $user = Actividad::find($id);
-        return view('sicepla.empleado.empleado-subirdptoarch',[
+        $user = ActividadTemporal::find($id);
+        return view('sicepla.empleado.empleado-subirplazo',[
             'id' => $user
         ]);
     }
@@ -88,20 +89,20 @@ class JefedeptoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = Actividad::find($id);
+        $user = ActividadTemporal::find($id);
         $url = "";
-        if ($request->hasFile('url')) {
-          $url = "Archivo".'.'.time().'.'.$request->url->getClientOriginalExtension();
-          $request->url->move(public_path('Jefe/Archivos'), $url);
+        if ($request->hasFile('url_plazo')) {
+          $url = "Archivo".'.'.time().'.'.$request->url_plazo->getClientOriginalExtension();
+          $request->url_plazo->move(public_path('Jefe/Archivos'), $url);
         } else {
-          if ('url' == null) {
+          if ('url_plazo' == null) {
             $url = "";
           }
         }
 
-        $user->url = $url;
+        $user->url_plazo = $url;
         $user->save();
-        return redirect('/jefedepto')->with('success','Archivo Subido Correctamente');
+        return redirect('/jefeacttemp')->with('success','Archivo Subido Correctamente');
     }
 
     /**

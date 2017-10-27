@@ -8,7 +8,7 @@ class ActividadTemporal extends Model
 {
     protected $table = "TBL_ActivTemporal";
     protected $primaryKey = "id";
-    protected $fillable = ['nombre','observacion','FK_DepartamentoId','tipo_entrega','fecha','hora','tipo_dia','Num_Dia','url'];
+    protected $fillable = ['nombre','observacion','FK_DepartamentoId','tipo_entrega','fecha','hora','tipo_dia','Num_Dia','url','url_plazo'];
 
     public function departamento(){
         return $this->belongsTo(Departamento::class,'FK_DepartamentoId','id');
