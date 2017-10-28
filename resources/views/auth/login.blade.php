@@ -107,7 +107,7 @@
                 <input class="btn green" type="submit" value="Ingresar">
             </div>
             <div class="col-sm-12 text-right">
-                <div class="forgot-password">
+               {{-- <div class="forgot-password">
                     <a href="{{ route('password.request') }}" class="forget-password">
                         ¿Se te olvidó tu contraseña?
                     </a>
@@ -116,7 +116,7 @@
                         Registrarse
                     </a>
                 </div><br>  
-                <div>
+                <div>--}}
                     <button data-toggle="modal" data-target="#formatos" class="btn green">
                       <i class="fa fa-plus"></i>
                         Formatos
@@ -127,7 +127,7 @@
                     <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title">Ayuda Modulo Proyectos</h5>
+                                    <h5 class="modal-title">Formatos</h5>
                                 </div>
                                 <div class="modal-body">
                                     <div class="table-responsive">
