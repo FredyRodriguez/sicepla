@@ -6,9 +6,13 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Container\Sicepla\Src\Departamento;
 use App\Container\Sicepla\Src\ActividadTemporal;
+use App\Container\Sicepla\Src\User;
+use App\Container\Sicepla\Src\Roles;
 use App\Container\Sicepla\Src\Requests\FormatoStoreRequest;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use App\Container\Sicepla\Src\Notifications\PlazoTemporalCreado;
+use Illuminate\Support\Facades\Notification;
 
 class AyudActiTempoController extends Controller
 {
@@ -43,6 +47,7 @@ class AyudActiTempoController extends Controller
      */
     public function store(FormatoStoreRequest $request)
     {
+      
         $url = "";
         if ($request->hasFile('url')) {
           $url = "Formato".'.'.time().'.'.$request->url->getClientOriginalExtension();
@@ -52,8 +57,8 @@ class AyudActiTempoController extends Controller
             $url = "";
           }
         }
-
-        ActividadTemporal::create([
+        $actividad = new ActividadTemporal;
+        $actividad::create([
             'nombre' => $request['nombre'],
             //'observacion' => $request['observacion'],
             'FK_DepartamentoId' => $request['FK_DepartamentoId'],
@@ -64,7 +69,12 @@ class AyudActiTempoController extends Controller
             'hora' => $request['horaD'],
             'url' => $url,
         ]);
+        $rol = new Roles;
+        $rol = $rol->find(2);
+        $rol = $rol->usuarios()->get();
+        Notification::send($rol, new PlazoTemporalCreado($request->nombre));
         return redirect('/activtemporal')->with('success','Actividad Temporal Creado Correctamente'); 
+        return $rol;
     }
 
     /**
