@@ -25,14 +25,7 @@ class PerfilFotoRequest extends FormRequest
     public function rules()
     {
         return [
-            'foto' => 'required|image|max:1000',
+            'foto' => 'required|image|max:10000',
         ];
-    }
-    public function commit($old){
-        $disk = Storage::disk('public');
-        $oldPath = str_replace('/storage/', '', $old); //obtiene la ruta el archivo antiguo
-        $disk->delete($oldPath); //elimina el archivo antiguo
-        $path = $this->foto->store('fotos', 'public'); //guarda el archivo nuevo
-        return $disk->url($path);
     }
 }

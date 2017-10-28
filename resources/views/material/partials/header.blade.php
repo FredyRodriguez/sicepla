@@ -268,11 +268,11 @@
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 
                             <img alt="" class="img-circle"
-                                src="{{auth()->user()->foto ?: '/img/default.png'}}" />
-
+                                src="Foto/Usuarios\{{auth()->user()->foto}}" />
+                       
                             <span class="username username-hide-on-mobile"> {{ Auth::user()->name }} </span>
                             <i class="fa fa-angle-down"></i>
-                        </a>
+                        </a> 
                         <ul class="dropdown-menu dropdown-menu-default">
                             <li>
                                 <a href="{{ route('perfil.index') }}"><i class="icon-user"></i> Mi Perfil </a>

@@ -9,7 +9,7 @@
                     <!-- SIDEBAR USERPIC -->
                     <div class="profile-userpic">
                         <img alt="" class="img-responsive"
-                            src="{{auth()->user()->foto ?: '/img/default.png' }}"/>
+                            src="Foto/Usuarios\{{auth()->user()->foto}}"/>
 
                       </div>
                     <!-- END SIDEBAR USERPIC -->

@@ -24,7 +24,7 @@
             <div class="table-responsive">
                 <table id="data"  class="table table-hover table-bordered table-condensed">
                     <thead>
-                        <th class="text-center">Actividad</th>
+                        <th class="text-center">Plazo</th>
                         <th class="text-center">Tipo Entrega</th>
                         <th class="text-center">Tipo Dia</th>   
                         <th class="text-center">Numero Dia</th>
@@ -32,6 +32,7 @@
                         <th class="text-center">Hora</th>
                         <th class="text-center">Observación</th>
                         <th class="text-center">Subir Archivo</th>
+                        <th class="text-center">Ver</th>
                     </thead>
                     <tbody>
                         @foreach($jefes as $jefe)
@@ -60,12 +61,13 @@
                             @endif
                             <td>{{$jefe->observacion}}</td>
                             <td>
-                            @if($jefe->hora || $jefe->tipo_dia >= \Carbon\Carbon::now())
+                            @if($jefe->fecha  >= \Carbon\Carbon::now() || $jefe->hora  >= \Carbon\Carbon::now())
                             {{link_to_route('jefedepto.edit', $title = '',$parameter = $jefe->id , $attributes = ['class' => 'btn btn-simple btn-warning btn-icon edit icon-pencil'])}}
                             @else
                             <span class="label label-success"> x <span>
                             @endif
                             </td>
+                            <td><a href="Jefe/Archivos\{{$jefe->url}}" target="_blank"><button type="button" class="btn btn-info" title="Visualizar"><i class="fa fa-eye"></i></button></a></td>
                         </tr>
                         @endforeach
                     </tbody>
