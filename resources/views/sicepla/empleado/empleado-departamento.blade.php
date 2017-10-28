@@ -18,13 +18,12 @@
 @include('sicepla.alerts.error')
 @include('sicepla.alerts.errors')
 {{--Fin Mensaje Confirmar--}}
-    @component('components.portlet', ['icon' => 'fa fa-object-group', 'title' => 'Departamento'])
+    @component('components.portlet', ['icon' => 'fa fa-object-group', 'title' => 'Dependencia'])
         <div id="app">            
             {{--inicio tabla--}}
             <div class="table-responsive">
                 <table id="data"  class="table table-hover table-bordered table-condensed">
                     <thead>
-                        <th class="text-center">Departamento</th>
                         <th class="text-center">Actividad</th>
                         <th class="text-center">Tipo Entrega</th>
                         <th class="text-center">Tipo Dia</th>   
@@ -37,17 +36,32 @@
                     <tbody>
                         @foreach($jefes as $jefe)
                         <tr  class="text-center">
-                            <td>{{$jefe->nombredepar}}</td>
                             <td>{{$jefe->nombreacti}}</td>
                             <td>{{$jefe->tipo_entrega}}</td>
+                            @if(isset($jefe->tipo_dia))
                             <td>{{$jefe->tipo_dia}}</td>
+                            @else
+                                <td>x</td>
+                            @endif
+                            @if(isset($jefe->Num_Dia))
                             <td>{{$jefe->Num_Dia}}</td>
+                            @else
+                                <td>x</td>
+                            @endif
+                            @if(isset($jefe->fecha))
                             <td>{{$jefe->fecha}}</td>
+                            @else
+                                <td>x</td>
+                            @endif
+                            @if(isset($jefe->hora))
                             <td>{{$jefe->hora}}</td>
+                            @else
+                                <td>x</td>
+                            @endif
                             <td>{{$jefe->observacion}}</td>
                             <td>
-                            @if($jefe->fecha && $jefe->hora === \Carbon\Carbon::now())
-                            <td>{{link_to_route('jefedepto.edit', $title = '',$parameter = $jefe->id , $attributes = ['class' => 'btn btn-simple btn-warning btn-icon edit icon-pencil'])}}</td>
+                            @if($jefe->hora || $jefe->tipo_dia >= \Carbon\Carbon::now())
+                            {{link_to_route('jefedepto.edit', $title = '',$parameter = $jefe->id , $attributes = ['class' => 'btn btn-simple btn-warning btn-icon edit icon-pencil'])}}
                             @else
                             <span class="label label-success"> x <span>
                             @endif

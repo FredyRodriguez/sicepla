@@ -18,7 +18,7 @@
 @include('sicepla.alerts.error')
 @include('sicepla.alerts.errors')
 {{--Fin Mensaje Confirmar--}}
-    @component('components.portlet', ['icon' => 'fa fa-object-group', 'title' => 'Departamento'])
+    @component('components.portlet', ['icon' => 'fa fa-object-group', 'title' => 'Plazos Temporales'])
         <div id="app">            
             {{--inicio tabla--}}
             <div class="table-responsive">
@@ -40,11 +40,31 @@
                             <td>{{$jefe->nombredepar}}</td>
                             <td>{{$jefe->nombreacti}}</td>
                             <td>{{$jefe->tipo_entrega}}</td>
+                            @if(isset($jefe->tipo_dia))
                             <td>{{$jefe->tipo_dia}}</td>
+                            @else
+                                <td>x</td>
+                            @endif
+                            @if(isset($jefe->Num_Dia))
                             <td>{{$jefe->Num_Dia}}</td>
+                            @else
+                                <td>x</td>
+                            @endif
+                            @if(isset($jefe->fecha))
                             <td>{{$jefe->fecha}}</td>
+                            @else
+                                <td>x</td>
+                            @endif
+                            @if(isset($jefe->hora))
                             <td>{{$jefe->hora}}</td>
+                            @else
+                                <td>x</td>
+                            @endif
+                            @if(isset($jefe->observacion))
                             <td>{{$jefe->observacion}}</td>
+                            @else
+                                <td>x</td>
+                            @endif
                             <td>
                             @if($jefe->fecha && $jefe->hora === \Carbon\Carbon::now())
                             <td>{{link_to_route('jefeacttemp.edit', $title = '',$parameter = $jefe->id , $attributes = ['class' => 'btn btn-simple btn-warning btn-icon edit icon-pencil'])}}</td>
