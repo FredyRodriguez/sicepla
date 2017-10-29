@@ -13,6 +13,15 @@ class Kernel extends HttpKernel
      *
      * @var array
      */
+      public function registerBundles()
+    {
+        $bundles = array(
+            // ...
+
+            new Khill\Lavacharts\Symfony\Bundle\LavachartsBundle(),
+        );
+    }
+
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,

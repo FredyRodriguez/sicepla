@@ -41,3 +41,6 @@ Route::resource('activtemporal', 'AyudActiTempoController');
 Route::resource('jefedepto', 'JefedeptoController');
 
 Route::resource('jefeacttemp', 'JefeActTempController');
+
+//Rutas Estadisticas
+Route::resource('estadistica', 'EstadisticasController');

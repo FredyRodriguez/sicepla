@@ -18,3 +18,10 @@
     'link' => route('formatos.index')
 ])
 @endcomponent
+
+@component('components.nav-link', [
+    'icon' => 'fa fa-area-chart',
+    'title' => 'Estadisticas',
+    'link' => route('estadistica.index')
+])
+@endcomponent
